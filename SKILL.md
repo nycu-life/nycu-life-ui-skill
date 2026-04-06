@@ -42,6 +42,12 @@ Reduce saturation, increase brightness for comfort. Full values in [references/d
 
 **Brand (blue):** Primary `#2F60DA` | Secondary 1 `#527AE0` | Secondary 2 `#BECDF4` | Secondary 3 `#D9E3FC` | Secondary 4 `#EDF0F5`
 
+**Accent Green:** Primary `#8BD22D` | Secondary 1 `#A3E052` | Secondary 2 `#D1F0A8` | Secondary 3 `#E3F6CB` | Secondary 4 `#EDF0F5`
+
+**Accent Orange:** Primary `#E0A629` | Secondary 1 `#E5B54D` | Secondary 2 `#F5DBA3` | Secondary 3 `#F7ECD4` | Secondary 4 `#FFF7E5`
+
+**Neutrals** — text, backgrounds, borders/stroke (描邊色): same gray scale as light mode (Black `#000000` → White `#FFFFFF`). In dark mode, lighter grays for text, darker grays for backgrounds.
+
 **State:** Info `#A9C5F5` | Success `#11D491` | Warning `#E9A063` | Error `#ED5B5B`
 
 #### WCAG Contrast Pairings
