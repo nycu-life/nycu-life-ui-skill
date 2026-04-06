@@ -30,6 +30,7 @@ export const colors = {
       secondary3: '#FFE5AD',
       secondary4: '#6C4C08',
     },
+    /** Text (darker = more important), backgrounds, borders/stroke (描邊色) */
     neutral: {
       black: '#000000',
       gray1: '#333333',
@@ -70,6 +71,7 @@ export const colors = {
       secondary3: '#F7ECD4',
       secondary4: '#FFF7E5',
     },
+    /** Same scale, inverted usage. Borders/stroke use lighter grays on dark backgrounds. */
     neutral: {
       black: '#000000',
       gray1: '#333333',

@@ -58,7 +58,7 @@ Used for: category distinction (auxiliary).
 
 ### Neutral Colors
 
-Used for: text (importance correlates with darkness), backgrounds, borders.
+Used for: text (importance correlates with darkness), backgrounds, borders/stroke (描邊色). In light mode, use dark grays (Black–Gray 4) for borders; in dark mode, use light grays (Gray 5–White).
 
 | Token | Hex | RGB |
 |-------|-----|-----|
@@ -119,7 +119,7 @@ Design principle: reduce overall saturation, moderately increase brightness for 
 
 ### Neutral Colors — Dark
 
-Same scale as light mode (inverted usage — lighter values for text on dark backgrounds).
+Same scale as light mode (inverted usage — lighter values for text on dark backgrounds). Borders/stroke use lighter grays (Gray 5–White) on dark backgrounds.
 
 | Token | Hex |
 |-------|-----|

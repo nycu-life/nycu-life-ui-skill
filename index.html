@@ -70,13 +70,14 @@ h3 { font-size: 16px; font-weight: 600; color: var(--color-gray-3); margin-botto
 /* Color swatches */
 .color-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
 .swatch {
-  width: 120px; border-radius: 12px; overflow: hidden;
-  box-shadow: var(--shadow-card); font-size: 12px;
+  width: 110px; flex-shrink: 0; border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow-card); font-size: 11px;
 }
-.swatch-fill { height: 80px; }
+.swatch-fill { height: 72px; border-radius: 12px 12px 0 0; }
 .swatch-label { padding: 8px; background: white; }
 .swatch-label .name { font-weight: 600; color: var(--color-gray-2); }
 .swatch-label .hex { color: var(--text-aux); font-family: monospace; }
+.dark-swatch .swatch { box-shadow: 0px 8px 24px rgba(255, 255, 255, 0.08); }
 
 /* Typography */
 .type-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
@@ -264,15 +265,15 @@ h3 { font-size: 16px; font-weight: 600; color: var(--color-gray-3); margin-botto
 
   <h3><span data-i18n="gray">灰階色</span> <span style="font-weight:400;font-size:13px;color:var(--text-aux)" data-i18n="gray_usage">— 文字顏色（重要程度與深淺成正比）/ 背景色 / 描邊色</span></h3>
   <div class="color-row">
-    <div class="swatch"><div class="swatch-fill" style="background:#000000"></div><div class="swatch-label"><div class="name">Black</div><div class="hex">#000000</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#333333"></div><div class="swatch-label"><div class="name">Gray 1</div><div class="hex">#333333</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#374151"></div><div class="swatch-label"><div class="name">Gray 2</div><div class="hex">#374151</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#4B5563"></div><div class="swatch-label"><div class="name">Gray 3</div><div class="hex">#4B5563</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#6B7280"></div><div class="swatch-label"><div class="name">Gray 4</div><div class="hex">#6B7280</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#9CA3AF"></div><div class="swatch-label"><div class="name">Gray 5</div><div class="hex">#9CA3AF</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#D1D5DB"></div><div class="swatch-label"><div class="name">Gray 6</div><div class="hex">#D1D5DB</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#F3F4F6;border:1px solid #D1D5DB"></div><div class="swatch-label"><div class="name">Gray 7</div><div class="hex">#F3F4F6</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#FFFFFF;border:1px solid #D1D5DB"></div><div class="swatch-label"><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#000000;border:1px solid #000"></div><div class="swatch-label"><div class="name">Black</div><div class="hex">#000000</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#333333;border:1px solid #000"></div><div class="swatch-label"><div class="name">Gray 1</div><div class="hex">#333333</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#374151;border:1px solid #000"></div><div class="swatch-label"><div class="name">Gray 2</div><div class="hex">#374151</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#4B5563;border:1px solid #000"></div><div class="swatch-label"><div class="name">Gray 3</div><div class="hex">#4B5563</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#6B7280;border:1px solid #000"></div><div class="swatch-label"><div class="name">Gray 4</div><div class="hex">#6B7280</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#9CA3AF;border:1px solid #000"></div><div class="swatch-label"><div class="name">Gray 5</div><div class="hex">#9CA3AF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#D1D5DB;border:1px solid #000"></div><div class="swatch-label"><div class="name">Gray 6</div><div class="hex">#D1D5DB</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#F3F4F6;border:1px solid #000"></div><div class="swatch-label"><div class="name">Gray 7</div><div class="hex">#F3F4F6</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#FFFFFF;border:1px solid #000"></div><div class="swatch-label"><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
   </div>
 
   <h3 data-i18n="state">狀態色</h3>
@@ -285,7 +286,7 @@ h3 { font-size: 16px; font-weight: 600; color: var(--color-gray-3); margin-botto
 </section>
 
 <!-- 02. Colors Dark -->
-<section style="background:#1a1a2e;color:#D1D5DB;padding:32px;border-radius:20px">
+<section class="dark-swatch" style="background:#1a1a2e;color:#D1D5DB;padding:32px;border-radius:20px">
   <h2 style="color:#BECDF4;border-color:#527AE0" data-i18n="s02">02. 深色色彩</h2>
   <p class="spec" style="background:rgba(255,255,255,0.06);color:#9CA3AF;margin-bottom:24px" data-i18n="dark_note">降低整體色彩飽和度，適量增加明度，使視覺上更舒適</p>
 
@@ -318,15 +319,15 @@ h3 { font-size: 16px; font-weight: 600; color: var(--color-gray-3); margin-botto
 
   <h3 style="color:#9CA3AF"><span data-i18n="gray">灰階色</span> <span style="font-weight:400;font-size:13px" data-i18n="gray_usage">— 文字顏色（重要程度與深淺成正比）/ 背景色 / 描邊色</span></h3>
   <div class="color-row">
-    <div class="swatch"><div class="swatch-fill" style="background:#000000"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Black</div><div class="hex">#000000</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#333333"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 1</div><div class="hex">#333333</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#374151"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 2</div><div class="hex">#374151</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#4B5563"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 3</div><div class="hex">#4B5563</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#6B7280"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 4</div><div class="hex">#6B7280</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#9CA3AF"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 5</div><div class="hex">#9CA3AF</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#D1D5DB"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 6</div><div class="hex">#D1D5DB</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#F3F4F6"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 7</div><div class="hex">#F3F4F6</div></div></div>
-    <div class="swatch"><div class="swatch-fill" style="background:#FFFFFF"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">White</div><div class="hex">#FFFFFF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#000000;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Black</div><div class="hex">#000000</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#333333;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 1</div><div class="hex">#333333</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#374151;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 2</div><div class="hex">#374151</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#4B5563;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 3</div><div class="hex">#4B5563</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#6B7280;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 4</div><div class="hex">#6B7280</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#9CA3AF;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 5</div><div class="hex">#9CA3AF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#D1D5DB;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 6</div><div class="hex">#D1D5DB</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#F3F4F6;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 7</div><div class="hex">#F3F4F6</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#FFFFFF;border:1px solid #fff"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">White</div><div class="hex">#FFFFFF</div></div></div>
   </div>
 
   <h3 style="color:#9CA3AF" data-i18n="state_dark">狀態色（深色）</h3>

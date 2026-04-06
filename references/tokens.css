@@ -33,7 +33,7 @@
   --color-accent-orange-secondary-4: #6C4C08;
 
   /* ========== Neutrals ========== */
-  /* Text color importance correlates with darkness; also backgrounds/borders */
+  /* Text color importance correlates with darkness; also backgrounds/borders/stroke (描邊色) */
   --color-black: #000000;
   --color-gray-1: #333333;
   --color-gray-2: #374151;
