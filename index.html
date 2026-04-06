@@ -544,19 +544,21 @@ h3 { font-size: 16px; font-weight: 600; color: var(--color-gray-3); margin-botto
     <!-- Radius (left) -->
     <div style="flex:1;min-width:380px">
       <h3 data-i18n="radius_title">圓角半徑 Radius（數值不固定，僅供參考）</h3>
-      <p style="font-size:13px;color:var(--text-aux);margin-bottom:20px" data-i18n="radius_rule">尺寸越大的組件適用越大的圓角（不超過按鈕高度的1/4）</p>
+      <p style="font-size:13px;color:var(--text-aux);margin-bottom:8px" data-i18n="radius_rule">尺寸越大的組件適用越大的圓角（不超過按鈕高度的1/4）</p>
+      <p style="font-size:13px;color:var(--text-aux);margin-bottom:20px" data-i18n="radius_concentric">同心圓角：內層圓角 = 外層圓角 - padding，確保嵌套元素的圓角視覺對齊</p>
       <div style="display:flex;gap:12px">
-        <div style="position:relative;width:260px;height:240px">
-          <div style="position:absolute;bottom:0;left:0;width:260px;height:240px;background:var(--color-brand-primary);border-radius:20px"></div>
-          <div style="position:absolute;bottom:0;left:0;width:210px;height:185px;background:var(--color-brand-secondary-1);border-radius:16px"></div>
-          <div style="position:absolute;bottom:0;left:0;width:165px;height:130px;background:var(--color-brand-secondary-2);border-radius:12px"></div>
-          <div style="position:absolute;bottom:0;left:0;width:125px;height:75px;background:var(--color-brand-secondary-3);border-radius:8px"></div>
-        </div>
-        <div style="position:relative;height:240px;font-size:12px;width:120px">
-          <div style="position:absolute;top:0"><strong style="color:var(--color-brand-primary)">20px</strong><br><span style="color:var(--text-aux)" data-i18n="r_container">圓頭容器</span></div>
-          <div style="position:absolute;top:55px"><strong style="color:var(--color-brand-primary)">16px</strong><br><span style="color:var(--text-aux)" data-i18n="r_large">大組件</span></div>
-          <div style="position:absolute;top:110px"><strong style="color:var(--color-brand-primary)">12px</strong><br><span style="color:var(--text-aux)" data-i18n="r_card">卡片、小組件</span></div>
-          <div style="position:absolute;top:165px"><strong style="color:var(--color-brand-primary)">8px</strong><br><span style="color:var(--text-aux)" data-i18n="r_btn">按鈕、輸入框、小標籤</span></div>
+        <!-- Concentric nested boxes: each inner = parent radius - padding -->
+        <div style="background:var(--color-brand-primary);border-radius:20px;padding:10px 10px 0 10px;width:280px">
+          <div style="font-size:11px;color:white;margin-bottom:4px;text-align:right"><strong>20px</strong> <span data-i18n="r_container">圓頭容器</span></div>
+          <div style="background:var(--color-brand-secondary-1);border-radius:16px;padding:10px 10px 0 10px">
+            <div style="font-size:11px;color:white;margin-bottom:4px;text-align:right"><strong>16px</strong> <span data-i18n="r_large">大組件</span></div>
+            <div style="background:var(--color-brand-secondary-2);border-radius:12px;padding:10px 10px 0 10px">
+              <div style="font-size:11px;color:white;margin-bottom:4px;text-align:right"><strong>12px</strong> <span data-i18n="r_card">卡片、小組件</span></div>
+              <div style="background:var(--color-brand-secondary-3);border-radius:8px;padding:10px;min-height:50px">
+                <div style="font-size:11px;color:var(--color-brand-primary)"><strong>8px</strong> <span data-i18n="r_btn">按鈕、輸入框、小標籤</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -747,6 +749,7 @@ const i18n = {
     radius_title: '圓角半徑 Radius（數值不固定，僅供參考）',
     r_btn: '按鈕、輸入框、小標籤', r_card: '卡片、小組件', r_large: '大組件', r_container: '圓頭容器',
     radius_rule: '尺寸越大的組件適用越大的圓角（不超過按鈕高度的1/4）',
+    radius_concentric: '同心圓角：內層圓角 = 外層圓角 - padding，確保嵌套元素的圓角視覺對齊',
     shadow_title: '陰影規範', shadow_desc: '不使用純黑色，保持柔和度，讓頁面更乾淨且協調統一',
     shadow_opacity: '透明度：10%', shadow_blur: '模糊：32',
     material_title: '材質效果', material_desc: '也可適時加入材質效果增加網頁質感',
@@ -798,6 +801,7 @@ const i18n = {
     radius_title: 'Border Radius (reference values, not fixed)',
     r_btn: 'Buttons, inputs, tags', r_card: 'Cards, widgets', r_large: 'Large widgets', r_container: 'Rounded containers',
     radius_rule: 'Larger components use larger radius (never exceed 1/4 of element height)',
+    radius_concentric: 'Concentric corners: inner radius = outer radius - padding, keeping nested corners visually aligned',
     shadow_title: 'Shadow Spec', shadow_desc: 'No pure black. Keep soft for a clean, coordinated look.',
     shadow_opacity: 'Opacity: 10%', shadow_blur: 'Blur: 32',
     material_title: 'Material Effects', material_desc: 'Add material effects to enhance visual quality',

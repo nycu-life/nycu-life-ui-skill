@@ -87,6 +87,8 @@ System fonts: PingFang + SF Pro (Apple) / Source Han Sans + Roboto (Windows/Andr
 
 Larger components use larger radius. Never exceed 1/4 of element height.
 
+**Concentric corners (同心圓角):** when nesting elements, inner radius = outer radius - padding. This ensures corners stay visually concentric. Example: outer 20px radius with 4px padding → inner 16px radius.
+
 | Value | Usage |
 |-------|-------|
 | 8px | Buttons, inputs, small tags |

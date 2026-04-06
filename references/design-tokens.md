@@ -218,6 +218,8 @@ Base unit: 4px. All spacing values should be multiples of 4.
 
 Rule: larger components use larger radius. Never exceed 1/4 of element height.
 
+**Concentric corners (同心圓角):** when nesting elements, inner border-radius = outer border-radius - padding between them. This keeps corners visually aligned. Example: outer container 20px radius with 4px padding → inner element should use 16px radius.
+
 | Token | Value | Usage |
 |-------|-------|-------|
 | `--radius-sm` | 8px | Buttons, input fields, small tags |
