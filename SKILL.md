@@ -24,11 +24,31 @@ Official design system for NYCU LIFE frontend. All tokens and rules derive from 
 
 Full token list with dark mode: [references/design-tokens.md](references/design-tokens.md)
 
-**Light brand (blue):** Primary `#0045F2` | Secondary 1 `#2462FF` | Secondary 2 `#4D7FFF` | Secondary 3 `#CCDBFF` | Secondary 4 `#2455A8`
+#### Light Mode
 
-**Neutrals:** Black `#000000` | Gray 1 `#333333` | Gray 2 `#374151` | Gray 3 `#4B5563` | Gray 4 `#6B7280` | Gray 5 `#9CA3AF` | Gray 6 `#D1D5DB` | Gray 7 `#F3F4F6` | White `#FFFFFF`
+**Brand (blue)** — titles, buttons, icons, cards: Primary `#0045F2` | Secondary 1 `#2462FF` | Secondary 2 `#4D7FFF` | Secondary 3 `#CCDBFF` | Secondary 4 `#2455A8`
+
+**Accent Green** — category distinction: Primary `#80DA0A` | Secondary 1 `#98E236` | Secondary 2 `#AFED5E` | Secondary 3 `#D5F1B1` | Secondary 4 `#EDF0F5`
+
+**Accent Orange** — category distinction: Primary `#F2A500` | Secondary 1 `#FFBA24` | Secondary 2 `#FFC64D` | Secondary 3 `#FFE5AD` | Secondary 4 `#6C4C08`
+
+**Neutrals** — text (darker = more important), backgrounds, borders: Black `#000000` | Gray 1 `#333333` | Gray 2 `#374151` | Gray 3 `#4B5563` | Gray 4 `#6B7280` | Gray 5 `#9CA3AF` | Gray 6 `#D1D5DB` | Gray 7 `#F3F4F6` | White `#FFFFFF`
 
 **State:** Info `#A0C3FF` | Success `#0FBD81` | Warning `#F5913D` | Error `#FC4C4D`
+
+#### Dark Mode
+
+Reduce saturation, increase brightness for comfort. Full values in [references/design-tokens.md](references/design-tokens.md).
+
+**Brand (blue):** Primary `#2F60DA` | Secondary 1 `#527AE0` | Secondary 2 `#BECDF4` | Secondary 3 `#D9E3FC` | Secondary 4 `#EDF0F5`
+
+**State:** Info `#A9C5F5` | Success `#11D491` | Warning `#E9A063` | Error `#ED5B5B`
+
+#### WCAG Contrast Pairings
+
+Light: `#0045F2` on `#FFFFFF` | `#4D7FFF` on `#FFFFFF` | `#2462FF` on `#CCDBFF` | `#2455A8` on `#CCDBFF`
+
+Dark: `#2F60DA` on `#E5EBFA` | `#BECDF4` on `#2F60DA` | `#EDF0F5` on `#527AE0` | `#D9E3FC` on `#2F60DA`
 
 ### Typography
 
@@ -88,6 +108,7 @@ States: Rest, Hover, Pressed, Disabled.
 
 ```css
 box-shadow: 0px 12px 32px rgba(55, 65, 81, 0.1);
+/* #374151, x:0 y:12, opacity 10%, blur 32 */
 ```
 No pure black shadows. Keep soft and coordinated.
 
@@ -112,7 +133,7 @@ No pure black shadows. Keep soft and coordinated.
 | Page width | 1440px |
 | Content max-width | 1200px |
 | Above-the-fold | 900px |
-| Grid | 12 columns, 24px gutter |
+| Grid | 12 columns + 11 gutters, gutter 24px |
 | Nav height | 60-100px |
 | Footer min-height | 80px |
 | Min tap target | 44px (WCAG) |
