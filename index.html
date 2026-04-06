@@ -547,14 +547,14 @@ h3 { font-size: 16px; font-weight: 600; color: var(--color-gray-3); margin-botto
       <p style="font-size:13px;color:var(--text-aux);margin-bottom:8px" data-i18n="radius_rule">尺寸越大的組件適用越大的圓角（不超過按鈕高度的1/4）</p>
       <p style="font-size:13px;color:var(--text-aux);margin-bottom:20px" data-i18n="radius_concentric">同心圓角：內層圓角 = 外層圓角 - padding，確保嵌套元素的圓角視覺對齊</p>
       <div style="display:flex;gap:12px">
-        <!-- Concentric nested boxes: each inner = parent radius - padding -->
-        <div style="background:var(--color-brand-primary);border-radius:20px;padding:10px 10px 0 10px;width:280px">
-          <div style="font-size:11px;color:white;margin-bottom:4px;text-align:right"><strong>20px</strong> <span data-i18n="r_container">圓頭容器</span></div>
-          <div style="background:var(--color-brand-secondary-1);border-radius:16px;padding:10px 10px 0 10px">
-            <div style="font-size:11px;color:white;margin-bottom:4px;text-align:right"><strong>16px</strong> <span data-i18n="r_large">大組件</span></div>
-            <div style="background:var(--color-brand-secondary-2);border-radius:12px;padding:10px 10px 0 10px">
-              <div style="font-size:11px;color:white;margin-bottom:4px;text-align:right"><strong>12px</strong> <span data-i18n="r_card">卡片、小組件</span></div>
-              <div style="background:var(--color-brand-secondary-3);border-radius:8px;padding:10px;min-height:50px">
+        <!-- Concentric nested boxes: aligned bottom-left, labels top-right -->
+        <div style="background:var(--color-brand-primary);border-radius:20px;padding:10px 10px 0 0;width:280px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end">
+          <div style="font-size:11px;color:white;align-self:flex-end;margin-bottom:4px;padding-right:10px"><strong>20px</strong> <span data-i18n="r_container">圓頭容器</span></div>
+          <div style="background:var(--color-brand-secondary-1);border-radius:16px 16px 16px 0;padding:10px 10px 0 0;width:230px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end">
+            <div style="font-size:11px;color:white;align-self:flex-end;margin-bottom:4px;padding-right:6px"><strong>16px</strong> <span data-i18n="r_large">大組件</span></div>
+            <div style="background:var(--color-brand-secondary-2);border-radius:12px 12px 12px 0;padding:10px 10px 0 0;width:180px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end">
+              <div style="font-size:11px;color:white;align-self:flex-end;margin-bottom:4px;padding-right:6px"><strong>12px</strong> <span data-i18n="r_card">卡片、小組件</span></div>
+              <div style="background:var(--color-brand-secondary-3);border-radius:8px 8px 8px 0;padding:8px;width:140px;min-height:50px">
                 <div style="font-size:11px;color:var(--color-brand-primary)"><strong>8px</strong> <span data-i18n="r_btn">按鈕、輸入框、小標籤</span></div>
               </div>
             </div>
