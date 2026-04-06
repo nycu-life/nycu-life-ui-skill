@@ -1,6 +1,6 @@
 # NYCU LIFE UI Skill
 
-AI coding agent skill that enforces the [NYCU LIFE UI Style Guidelines](https://www.figma.com/design/eshYmSn9jeEEti38tO1GGU/NYCU-LIFE-UI-Style-Guidelines?node-id=2635-102&m=dev) — design tokens, color system, typography, spacing, and WCAG 2.1 AA accessibility standards.
+[NYCU LIFE UI Style Guidelines](https://www.figma.com/design/eshYmSn9jeEEti38tO1GGU/NYCU-LIFE-UI-Style-Guidelines?node-id=2635-102&m=dev) as an AI agent skill. Colors, typography, spacing, components — WCAG 2.1 AA.
 
 ## Install
 
