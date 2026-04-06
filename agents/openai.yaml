@@ -1,0 +1,4 @@
+interface:
+  display_name: "NYCU LIFE UI"
+  short_description: "Design tokens and style guidelines for NYCU LIFE frontend (WCAG 2.1 AA)"
+  default_prompt: "Apply NYCU LIFE UI style guidelines to the current component"

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYCU LIFE UI Style Guidelines</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0;24,400,1,0" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-brand-primary: #0045F2;
+  --color-brand-secondary-1: #2462FF;
+  --color-brand-secondary-2: #4D7FFF;
+  --color-brand-secondary-3: #CCDBFF;
+  --color-brand-secondary-4: #2455A8;
+  --color-accent-green-primary: #80DA0A;
+  --color-accent-green-secondary-1: #98E236;
+  --color-accent-green-secondary-2: #AFED5E;
+  --color-accent-green-secondary-3: #D5F1B1;
+  --color-accent-green-secondary-4: #EDF0F5;
+  --color-accent-orange-primary: #F2A500;
+  --color-accent-orange-secondary-1: #FFBA24;
+  --color-accent-orange-secondary-2: #FFC64D;
+  --color-accent-orange-secondary-3: #FFE5AD;
+  --color-accent-orange-secondary-4: #6C4C08;
+  --color-black: #000000;
+  --color-gray-1: #333333;
+  --color-gray-2: #374151;
+  --color-gray-3: #4B5563;
+  --color-gray-4: #6B7280;
+  --color-gray-5: #9CA3AF;
+  --color-gray-6: #D1D5DB;
+  --color-gray-7: #F3F4F6;
+  --color-white: #FFFFFF;
+  --color-info: #A0C3FF;
+  --color-success: #0FBD81;
+  --color-warning: #F5913D;
+  --color-error: #FC4C4D;
+  --shadow-card: 0px 12px 32px rgba(55, 65, 81, 0.1);
+  --bg: #FFFFFF;
+  --text: #333333;
+  --text-aux: #6B7280;
+  --section-bg: #F3F4F6;
+}
+
+body {
+  font-family: system-ui, -apple-system, "PingFang TC", "SF Pro Text", "Source Han Sans TC", "Noto Sans CJK TC", "Roboto", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.page { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
+
+/* Header */
+header { text-align: center; margin-bottom: 80px; }
+header h1 { font-size: 36px; font-weight: 700; color: var(--color-brand-primary); }
+header p { font-size: 14px; color: var(--text-aux); margin-top: 8px; }
+
+/* Section */
+section { margin-bottom: 80px; }
+section > h2 {
+  font-size: 28px; font-weight: 600; color: var(--color-brand-primary);
+  border-bottom: 2px solid var(--color-brand-secondary-3);
+  padding-bottom: 8px; margin-bottom: 32px;
+}
+h3 { font-size: 16px; font-weight: 600; color: var(--color-gray-3); margin-bottom: 16px; }
+
+/* Color swatches */
+.color-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+.swatch {
+  width: 120px; border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow-card); font-size: 12px;
+}
+.swatch-fill { height: 80px; }
+.swatch-label { padding: 8px; background: white; }
+.swatch-label .name { font-weight: 600; color: var(--color-gray-2); }
+.swatch-label .hex { color: var(--text-aux); font-family: monospace; }
+
+/* Typography */
+.type-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+.type-table th, .type-table td {
+  text-align: left; padding: 12px 16px;
+  border-bottom: 1px solid var(--color-gray-6);
+}
+.type-table th { font-size: 12px; color: var(--color-brand-primary); text-transform: uppercase; letter-spacing: 1px; }
+.type-table code { background: var(--section-bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+
+/* Spacing */
+.spacing-demo { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.spacing-bar-row { display: flex; align-items: center; gap: 16px; }
+.spacing-bar {
+  height: 32px; border-radius: 8px;
+  background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-secondary-2));
+}
+.spacing-label { font-size: 13px; color: var(--text-aux); min-width: 140px; font-family: monospace; }
+
+/* Radius */
+.radius-demo { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 24px; }
+.radius-box {
+  width: 100px; height: 100px; background: var(--color-brand-secondary-3);
+  border: 2px solid var(--color-brand-secondary-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; color: var(--color-brand-primary);
+}
+
+/* Buttons */
+.btn-group { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: none; cursor: pointer; font-family: inherit;
+  font-weight: 500; transition: all 0.15s;
+}
+.btn-sm { height: 32px; font-size: 13px; padding: 0 20px; border-radius: 8px; }
+.btn-md { height: 40px; font-size: 14px; padding: 0 21px; border-radius: 8px; }
+.btn-lg { height: 48px; font-size: 16px; padding: 0 24px; border-radius: 8px; }
+.btn-solid { background: var(--color-brand-primary); color: white; }
+.btn-solid:hover { background: var(--color-brand-secondary-1); }
+.btn-solid:active { background: var(--color-brand-secondary-4); }
+.btn-solid.disabled { background: var(--color-gray-5); cursor: not-allowed; }
+.btn-outline {
+  background: transparent; color: var(--color-brand-primary);
+  border: 1.5px solid var(--color-brand-primary);
+}
+.btn-outline:hover { background: var(--color-brand-secondary-3); }
+.btn-outline:active { background: var(--color-brand-secondary-2); color: white; }
+.btn-outline.disabled { border-color: var(--color-gray-5); color: var(--color-gray-5); cursor: not-allowed; }
+
+/* Shadow */
+.shadow-demo { display: flex; flex-wrap: wrap; gap: 32px; margin-bottom: 24px; }
+.shadow-card {
+  width: 200px; height: 140px; background: white;
+  border-radius: 16px; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: var(--text-aux);
+}
+.glass-card {
+  width: 200px; height: 140px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500;
+}
+.frosted {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+}
+.liquid {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+.glass-bg {
+  background: linear-gradient(135deg, var(--color-brand-secondary-2), var(--color-brand-primary));
+  border-radius: 16px; padding: 32px; display: flex; gap: 32px; flex-wrap: wrap;
+}
+
+/* Icons */
+.icon-grid { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.icon-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  width: 80px; padding: 12px 0; border-radius: 12px;
+  background: var(--section-bg); font-size: 11px; color: var(--text-aux);
+}
+.icon-item .material-symbols-rounded { font-size: 24px; color: var(--color-brand-primary); }
+
+/* Layout */
+.grid-demo { margin-bottom: 24px; }
+.grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin-bottom: 8px; }
+.grid-col {
+  height: 48px; background: var(--color-brand-secondary-3);
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: var(--color-brand-primary); font-weight: 600;
+}
+.grid-pattern { display: grid; gap: 8px; margin-bottom: 8px; }
+.grid-pattern .col {
+  height: 40px; background: var(--color-brand-secondary-3);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: var(--color-brand-primary); font-weight: 500;
+}
+
+/* Contrast */
+.contrast-demo { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+.contrast-card { width: 220px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-card); }
+.contrast-top { padding: 16px; min-height: 64px; }
+.contrast-bottom { padding: 16px; min-height: 64px; background: white; }
+.cc-name { font-size: 14px; font-weight: 600; }
+.cc-hex { font-size: 12px; margin-top: 4px; font-family: monospace; opacity: 0.8; }
+
+/* State */
+.state-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.badge {
+  padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; color: white;
+}
+
+/* Spec note */
+.spec { font-size: 13px; color: var(--text-aux); background: var(--section-bg); padding: 12px 16px; border-radius: 8px; margin-top: 8px; font-family: monospace; }
+
+/* Language toggle */
+.lang-toggle {
+  position: fixed; top: 16px; right: 16px; z-index: 100;
+  display: flex; border-radius: 8px; overflow: hidden;
+  box-shadow: var(--shadow-card); border: 1.5px solid var(--color-gray-6);
+  font-size: 13px; font-weight: 600;
+}
+.lang-toggle button {
+  padding: 6px 14px; border: none; cursor: pointer;
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  transition: all 0.15s;
+}
+.lang-toggle button.active {
+  background: var(--color-brand-primary); color: white;
+}
+.lang-toggle button:not(.active) {
+  background: white; color: var(--color-gray-3);
+}
+</style>
+</head>
+<body>
+<div class="lang-toggle">
+  <button id="btn-zh" class="active" onclick="setLang('zh')">中文</button>
+  <button id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+<div class="page">
+
+<header>
+  <h1>NYCU LIFE UI Style Guidelines</h1>
+  <p>Accessibility: WCAG 2.1 AA &middot; v1.0 &middot; 2026.02.14 &middot;
+    <a href="https://www.figma.com/design/eshYmSn9jeEEti38tO1GGU/NYCU-LIFE-UI-Style-Guidelines?node-id=2635-102&m=dev" target="_blank" style="color:var(--color-brand-primary)">Figma Source</a>
+  </p>
+</header>
+
+<!-- 01. Colors Light -->
+<section>
+  <h2 data-i18n="s01">01. 淺色色彩</h2>
+
+  <h3><span data-i18n="brand">品牌色</span> <span style="font-weight:400;font-size:13px;color:var(--text-aux)" data-i18n="brand_usage">— 標題文字 / 按鈕 / 圖標 / 卡片區塊</span></h3>
+  <div class="color-row">
+    <div class="swatch"><div class="swatch-fill" style="background:#0045F2"></div><div class="swatch-label"><div class="name">Primary</div><div class="hex">#0045F2</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#2462FF"></div><div class="swatch-label"><div class="name">Secondary 1</div><div class="hex">#2462FF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#4D7FFF"></div><div class="swatch-label"><div class="name">Secondary 2</div><div class="hex">#4D7FFF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#CCDBFF"></div><div class="swatch-label"><div class="name">Secondary 3</div><div class="hex">#CCDBFF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#2455A8"></div><div class="swatch-label"><div class="name">Secondary 4</div><div class="hex">#2455A8</div></div></div>
+  </div>
+
+  <h3><span data-i18n="green">輔助色 — 綠</span> <span style="font-weight:400;font-size:13px;color:var(--text-aux)" data-i18n="cat_usage">— 作為區分類別使用</span></h3>
+  <div class="color-row">
+    <div class="swatch"><div class="swatch-fill" style="background:#80DA0A"></div><div class="swatch-label"><div class="name">Primary</div><div class="hex">#80DA0A</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#98E236"></div><div class="swatch-label"><div class="name">Secondary 1</div><div class="hex">#98E236</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#AFED5E"></div><div class="swatch-label"><div class="name">Secondary 2</div><div class="hex">#AFED5E</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#D5F1B1"></div><div class="swatch-label"><div class="name">Secondary 3</div><div class="hex">#D5F1B1</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#EDF0F5"></div><div class="swatch-label"><div class="name">Secondary 4</div><div class="hex">#EDF0F5</div></div></div>
+  </div>
+
+  <h3><span data-i18n="orange">輔助色 — 橘/金</span> <span style="font-weight:400;font-size:13px;color:var(--text-aux)" data-i18n="cat_usage">— 作為區分類別使用</span></h3>
+  <div class="color-row">
+    <div class="swatch"><div class="swatch-fill" style="background:#F2A500"></div><div class="swatch-label"><div class="name">Primary</div><div class="hex">#F2A500</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#FFBA24"></div><div class="swatch-label"><div class="name">Secondary 1</div><div class="hex">#FFBA24</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#FFC64D"></div><div class="swatch-label"><div class="name">Secondary 2</div><div class="hex">#FFC64D</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#FFE5AD"></div><div class="swatch-label"><div class="name">Secondary 3</div><div class="hex">#FFE5AD</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#6C4C08"></div><div class="swatch-label"><div class="name">Secondary 4</div><div class="hex">#6C4C08</div></div></div>
+  </div>
+
+  <h3><span data-i18n="gray">灰階色</span> <span style="font-weight:400;font-size:13px;color:var(--text-aux)" data-i18n="gray_usage">— 文字顏色（重要程度與深淺成正比）/ 背景色 / 描邊色</span></h3>
+  <div class="color-row">
+    <div class="swatch"><div class="swatch-fill" style="background:#000000"></div><div class="swatch-label"><div class="name">Black</div><div class="hex">#000000</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#333333"></div><div class="swatch-label"><div class="name">Gray 1</div><div class="hex">#333333</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#374151"></div><div class="swatch-label"><div class="name">Gray 2</div><div class="hex">#374151</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#4B5563"></div><div class="swatch-label"><div class="name">Gray 3</div><div class="hex">#4B5563</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#6B7280"></div><div class="swatch-label"><div class="name">Gray 4</div><div class="hex">#6B7280</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#9CA3AF"></div><div class="swatch-label"><div class="name">Gray 5</div><div class="hex">#9CA3AF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#D1D5DB"></div><div class="swatch-label"><div class="name">Gray 6</div><div class="hex">#D1D5DB</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#F3F4F6;border:1px solid #D1D5DB"></div><div class="swatch-label"><div class="name">Gray 7</div><div class="hex">#F3F4F6</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#FFFFFF;border:1px solid #D1D5DB"></div><div class="swatch-label"><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
+  </div>
+
+  <h3 data-i18n="state">狀態色</h3>
+  <div class="state-badges">
+    <span class="badge" style="background:#A0C3FF;color:#0045F2">Info #A0C3FF</span>
+    <span class="badge" style="background:#0FBD81">Success #0FBD81</span>
+    <span class="badge" style="background:#F5913D">Warning #F5913D</span>
+    <span class="badge" style="background:#FC4C4D">Error #FC4C4D</span>
+  </div>
+</section>
+
+<!-- 02. Colors Dark -->
+<section style="background:#1a1a2e;color:#D1D5DB;padding:32px;border-radius:20px">
+  <h2 style="color:#BECDF4;border-color:#527AE0" data-i18n="s02">02. 深色色彩</h2>
+  <p class="spec" style="background:rgba(255,255,255,0.06);color:#9CA3AF;margin-bottom:24px" data-i18n="dark_note">降低整體色彩飽和度，適量增加明度，使視覺上更舒適</p>
+
+  <h3 style="color:#9CA3AF" data-i18n="brand">品牌色</h3>
+  <div class="color-row">
+    <div class="swatch"><div class="swatch-fill" style="background:#2F60DA"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Primary</div><div class="hex">#2F60DA</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#527AE0"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 1</div><div class="hex">#527AE0</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#BECDF4"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 2</div><div class="hex">#BECDF4</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#D9E3FC"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 3</div><div class="hex">#D9E3FC</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#EDF0F5"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 4</div><div class="hex">#EDF0F5</div></div></div>
+  </div>
+
+  <h3 style="color:#9CA3AF" data-i18n="green">輔助色 — 綠</h3>
+  <div class="color-row">
+    <div class="swatch"><div class="swatch-fill" style="background:#8BD22D"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Primary</div><div class="hex">#8BD22D</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#A3E052"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 1</div><div class="hex">#A3E052</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#D1F0A8"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 2</div><div class="hex">#D1F0A8</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#E3F6CB"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 3</div><div class="hex">#E3F6CB</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#EDF0F5"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 4</div><div class="hex">#EDF0F5</div></div></div>
+  </div>
+
+  <h3 style="color:#9CA3AF" data-i18n="orange">輔助色 — 橘/金</h3>
+  <div class="color-row">
+    <div class="swatch"><div class="swatch-fill" style="background:#E0A629"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Primary</div><div class="hex">#E0A629</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#E5B54D"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 1</div><div class="hex">#E5B54D</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#F5DBA3"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 2</div><div class="hex">#F5DBA3</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#F7ECD4"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 3</div><div class="hex">#F7ECD4</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#FFF7E5"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Secondary 4</div><div class="hex">#FFF7E5</div></div></div>
+  </div>
+
+  <h3 style="color:#9CA3AF"><span data-i18n="gray">灰階色</span> <span style="font-weight:400;font-size:13px" data-i18n="gray_usage">— 文字顏色（重要程度與深淺成正比）/ 背景色 / 描邊色</span></h3>
+  <div class="color-row">
+    <div class="swatch"><div class="swatch-fill" style="background:#000000"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Black</div><div class="hex">#000000</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#333333"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 1</div><div class="hex">#333333</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#374151"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 2</div><div class="hex">#374151</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#4B5563"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 3</div><div class="hex">#4B5563</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#6B7280"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 4</div><div class="hex">#6B7280</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#9CA3AF"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 5</div><div class="hex">#9CA3AF</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#D1D5DB"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 6</div><div class="hex">#D1D5DB</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#F3F4F6"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">Gray 7</div><div class="hex">#F3F4F6</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background:#FFFFFF"></div><div class="swatch-label" style="background:#1a1a2e"><div class="name" style="color:#D1D5DB">White</div><div class="hex">#FFFFFF</div></div></div>
+  </div>
+
+  <h3 style="color:#9CA3AF" data-i18n="state_dark">狀態色（深色）</h3>
+  <div class="state-badges">
+    <span class="badge" style="background:#A9C5F5;color:#1a1a2e">Info #A9C5F5</span>
+    <span class="badge" style="background:#11D491;color:#1a1a2e">Success #11D491</span>
+    <span class="badge" style="background:#E9A063;color:#1a1a2e">Warning #E9A063</span>
+    <span class="badge" style="background:#ED5B5B">Error #ED5B5B</span>
+  </div>
+</section>
+
+<!-- 03. Contrast Pairings -->
+<section>
+  <h2 data-i18n="s03">03. 色彩對比（淺色與深色模式）</h2>
+  <p class="spec" style="margin-bottom:32px" data-i18n="contrast_note">不固定，僅為建議配色參考。色彩對比符合無障礙網頁 WCAG 2.1 AA 級規範。除了藍色以外的 Brand Color 同樣可參考此配色組合。</p>
+
+  <h3 data-i18n="light_mode">淺色模式</h3>
+  <div class="contrast-demo">
+    <div class="contrast-card">
+      <div class="contrast-top" style="background:#0045F2;color:#FFFFFF"><div class="cc-name">Primary</div><div class="cc-hex">#0045F2</div></div>
+      <div class="contrast-bottom"><div class="cc-name" style="color:#0045F2">On Primary</div><div class="cc-hex">#FFFFFF</div></div>
+    </div>
+    <div class="contrast-card">
+      <div class="contrast-top" style="background:#4D7FFF;color:#FFFFFF"><div class="cc-name">Secondary 2</div><div class="cc-hex">#4D7FFF</div></div>
+      <div class="contrast-bottom"><div class="cc-name" style="color:#4D7FFF">On Secondary 2</div><div class="cc-hex">#FFFFFF</div></div>
+    </div>
+    <div class="contrast-card">
+      <div class="contrast-top" style="background:#CCDBFF;color:#2462FF"><div class="cc-name">Secondary 3</div><div class="cc-hex">#CCDBFF</div></div>
+      <div class="contrast-bottom"><div class="cc-name" style="color:#2462FF">On Secondary 3</div><div class="cc-hex">#2462FF (Secondary 1)</div></div>
+    </div>
+    <div class="contrast-card">
+      <div class="contrast-top" style="background:#CCDBFF;color:#2455A8"><div class="cc-name">Secondary 3</div><div class="cc-hex">#CCDBFF</div></div>
+      <div class="contrast-bottom"><div class="cc-name" style="color:#2455A8">On Secondary 3</div><div class="cc-hex">#2455A8 (Secondary 4)</div></div>
+    </div>
+  </div>
+
+  <h3 data-i18n="dark_mode">深色模式</h3>
+  <div style="background:#1a1a2e;border-radius:16px;padding:24px">
+    <div class="contrast-demo">
+      <div class="contrast-card">
+        <div class="contrast-top" style="background:#E5EBFA;color:#2F60DA"><div class="cc-name">Secondary 3</div><div class="cc-hex">#E5EBFA</div></div>
+        <div class="contrast-bottom" style="background:#2a2a3e"><div class="cc-name" style="color:#2F60DA">On Secondary 3</div><div class="cc-hex" style="color:#9CA3AF">#2F60DA (Primary)</div></div>
+      </div>
+      <div class="contrast-card">
+        <div class="contrast-top" style="background:#2F60DA;color:#BECDF4"><div class="cc-name">Secondary 2</div><div class="cc-hex">#2F60DA</div></div>
+        <div class="contrast-bottom" style="background:#2a2a3e"><div class="cc-name" style="color:#BECDF4">On Secondary 2</div><div class="cc-hex" style="color:#9CA3AF">#BECDF4</div></div>
+      </div>
+      <div class="contrast-card">
+        <div class="contrast-top" style="background:#527AE0;color:#EDF0F5"><div class="cc-name">Secondary 1</div><div class="cc-hex">#527AE0</div></div>
+        <div class="contrast-bottom" style="background:#2a2a3e"><div class="cc-name" style="color:#EDF0F5">On Secondary 1</div><div class="cc-hex" style="color:#9CA3AF">#EDF0F5 (Secondary 4)</div></div>
+      </div>
+      <div class="contrast-card">
+        <div class="contrast-top" style="background:#2F60DA;color:#D9E3FC"><div class="cc-name">Primary</div><div class="cc-hex">#2F60DA</div></div>
+        <div class="contrast-bottom" style="background:#2a2a3e"><div class="cc-name" style="color:#D9E3FC">On Primary</div><div class="cc-hex" style="color:#9CA3AF">#D9E3FC (Secondary 3)</div></div>
+      </div>
+    </div>
+    <p style="color:#9CA3AF;font-size:13px;margin-top:8px" data-i18n="dark_contrast_note">除了藍色以外的 Brand Color，同樣可參考此配色組合</p>
+  </div>
+</section>
+
+<!-- 04. Typography -->
+<section>
+  <h2 data-i18n="s04">04. 文字排版</h2>
+  <p class="spec" style="margin-bottom:24px" data-i18n="typo_note">字體：蘋方(PingFang) + SF Pro (Apple) / 思源黑體 + Roboto (Win/Android)。行高建議設置為字號的 1.2-1.5 倍。段間距建議設置為字號 2-2.5 倍，閱讀起來更舒適。注意不要讓標題字過密，應留出行距與上下間距。</p>
+  <table class="type-table">
+    <thead><tr><th data-i18n="th_level">層級</th><th data-i18n="th_specimen">範例</th><th data-i18n="th_weight">字重</th><th data-i18n="th_size">字號</th></tr></thead>
+    <tbody>
+      <tr><td><code>H1</code></td><td style="font-size:36px;font-weight:700" data-i18n="h1_label">頁面主標題 H1</td><td>Bold (700)</td><td>36px</td></tr>
+      <tr><td><code>H2</code></td><td style="font-size:28px;font-weight:600" data-i18n="h2_label">模塊標題 H2</td><td>Semibold (600)</td><td>28px</td></tr>
+      <tr><td><code>H3</code></td><td style="font-size:22px;font-weight:500" data-i18n="h3_label">小標題/內容子標題 H3</td><td>Medium (500)</td><td>20-24px</td></tr>
+      <tr><td><code>H4</code></td><td style="font-size:16px;font-weight:400" data-i18n="h4_label">正文 H4</td><td>Regular (400)</td><td>16px</td></tr>
+      <tr><td><code>H5</code></td><td style="font-size:14px;font-weight:400;color:var(--text-aux)" data-i18n="h5_label">輔助與說明文字 H5</td><td>Regular (400)</td><td>14px</td></tr>
+      <tr><td><code>H6</code></td><td style="font-size:12px;font-weight:400;color:var(--color-gray-5)" data-i18n="h6_label">標籤/版權/最小字號 H6</td><td>Regular (400)</td><td>12px</td></tr>
+    </tbody>
+  </table>
+  <h3 data-i18n="text_color">字體顏色</h3>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:8px"><span style="width:32px;height:32px;background:#333333;border-radius:8px;display:inline-block"></span><span style="font-size:13px"><strong>Gray 1 #333333</strong> — <span data-i18n="gray1_usage">正文、標題、按鈕文字，通常選用深灰色</span></span></div>
+    <div style="display:flex;align-items:center;gap:8px"><span style="width:32px;height:32px;background:#9CA3AF;border-radius:8px;display:inline-block"></span><span style="font-size:13px"><strong>Gray 5 #9CA3AF</strong> — <span data-i18n="gray5_usage">註釋或輔助性文字，通常選用淺灰色</span></span></div>
+  </div>
+</section>
+
+<!-- 05. Grid & Layout -->
+<section>
+  <h2 data-i18n="s05">05. 格線系統</h2>
+
+  <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:32px">
+    <!-- Page layout diagram (left) -->
+    <div style="flex:2;min-width:380px">
+      <div style="position:relative;border:1px solid var(--color-gray-6);border-radius:8px;padding:0;overflow:hidden;max-width:520px">
+        <!-- Page width label -->
+        <div style="text-align:center;padding:8px;font-size:12px">
+          <span style="display:inline-block;background:var(--color-brand-secondary-2);color:white;padding:4px 16px;border-radius:6px;font-size:12px" data-i18n="grid_page_width">頁面尺寸 1440px</span>
+        </div>
+        <!-- Nav bar -->
+        <div style="background:var(--color-brand-primary);color:white;padding:8px 16px;font-size:13px;font-weight:600;position:relative">
+          LOGO
+          <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:400;color:rgba(255,255,255,0.7)" data-i18n="grid_nav">導航欄 (60-100px)</span>
+        </div>
+        <!-- Content area with 12-col grid -->
+        <div style="position:relative;min-height:260px;background:repeating-linear-gradient(90deg, rgba(77,127,255,0.08) 0px, rgba(77,127,255,0.08) calc((100% - 11*8px)/12), transparent calc((100% - 11*8px)/12), transparent calc((100% - 11*8px)/12 + 8px));padding:16px">
+          <!-- 12 col label -->
+          <div style="text-align:center;margin-top:20px">
+            <span style="background:var(--color-brand-secondary-2);color:white;padding:4px 16px;border-radius:6px;font-size:12px" data-i18n="grid_12col">12 欄系統</span>
+          </div>
+          <!-- Tap target -->
+          <div style="text-align:center;margin-top:40px;font-size:12px;color:var(--color-gray-4)">
+            <span data-i18n="grid_tap">最小點擊區域 44px</span><br>
+            <span data-i18n="grid_tap_note">（符合 WCAG2.1標準）</span>
+          </div>
+          <!-- Content width label -->
+          <div style="text-align:center;margin-top:40px">
+            <span style="background:var(--color-brand-secondary-2);color:white;padding:4px 16px;border-radius:6px;font-size:12px" data-i18n="grid_content">內容區域 1200px</span>
+          </div>
+          <!-- Fold height label (left side) -->
+          <div style="position:absolute;left:-4px;top:0;height:100%;display:flex;align-items:center">
+            <span style="writing-mode:vertical-rl;background:var(--color-brand-secondary-2);color:white;padding:8px 4px;border-radius:6px;font-size:11px;letter-spacing:1px" data-i18n="grid_fold">首屏高度 900px</span>
+          </div>
+        </div>
+        <!-- Footer -->
+        <div style="background:var(--color-brand-secondary-2);height:16px"></div>
+        <div style="text-align:center;padding:8px;font-size:12px;color:var(--color-gray-4)" data-i18n="grid_footer">頁腳（>80px）</div>
+      </div>
+    </div>
+
+    <!-- Grid info + patterns (right) -->
+    <div style="flex:1;min-width:280px">
+      <div style="background:var(--section-bg);border-radius:12px;padding:20px;margin-bottom:16px">
+        <h3 style="margin-bottom:8px" data-i18n="grid_12col">12 欄系統</h3>
+        <p style="font-size:13px;color:var(--text-aux);margin-bottom:8px" data-i18n="grid_12_desc">由 12 個欄和 11 個間距組成，可搭建不同內容配置比例，靈活排列成2列、3列、4列等多種佈局方式。</p>
+        <p style="font-size:13px;color:var(--color-brand-primary)" data-i18n="grid_gutter">（列間距默認為24px）</p>
+      </div>
+
+      <h3 data-i18n="layout_patterns">佈局模式</h3>
+      <div class="grid-pattern" style="grid-template-columns:1fr"><div class="col">100%</div></div>
+      <div class="grid-pattern" style="grid-template-columns:1fr 1fr"><div class="col">50%</div><div class="col">50%</div></div>
+      <div class="grid-pattern" style="grid-template-columns:1fr 1fr 1fr"><div class="col">33.3%</div><div class="col">33.3%</div><div class="col">33.3%</div></div>
+      <div class="grid-pattern" style="grid-template-columns:1fr 1fr 1fr 1fr"><div class="col">25%</div><div class="col">25%</div><div class="col">25%</div><div class="col">25%</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06. Buttons -->
+<section>
+  <h2 data-i18n="s06">06. 按鈕</h2>
+
+  <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:32px">
+    <!-- Rules -->
+    <div style="background:var(--section-bg);border-radius:12px;padding:20px;min-width:260px">
+      <div style="margin-bottom:16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px" data-i18n="btn_padding_title">內間距規範:</div>
+        <div style="font-size:12px;color:var(--text-aux)">Padding Left Right → <span style="color:var(--color-brand-primary)">1.5 x font size</span><br>Padding Top Bottom → <span style="color:var(--color-brand-primary)">1 x font size</span></div>
+      </div>
+      <div style="margin-bottom:16px">
+        <div style="font-size:12px;color:var(--text-aux)" data-i18n="btn_icon_gap">圖標與文字間距 > 5px（依據字號大小調整）</div>
+      </div>
+      <div>
+        <div style="font-size:12px;color:var(--text-aux)" data-i18n="btn_icon_size">圖標大小 16 - 20px（與文字視覺高度對齊即可）</div>
+      </div>
+    </div>
+
+    <!-- Sizes -->
+    <div>
+      <h3 data-i18n="btn_sizes">按鈕尺寸</h3>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div><div style="font-size:12px;color:var(--text-aux);margin-bottom:4px">Small (28 - 32px)</div><button class="btn btn-solid btn-sm">Small Button</button></div>
+        <div><div style="font-size:12px;color:var(--text-aux);margin-bottom:4px">Normal (36 - 40px)</div><button class="btn btn-solid btn-md">Normal Button</button></div>
+        <div><div style="font-size:12px;color:var(--text-aux);margin-bottom:4px">Medium (40 - 48px)</div><button class="btn btn-solid btn-lg">Medium Button</button></div>
+      </div>
+    </div>
+
+    <!-- States -->
+    <div>
+      <h3 data-i18n="btn_states_title">按鈕狀態</h3>
+      <table style="border-collapse:collapse;font-size:13px">
+        <thead><tr>
+          <th style="padding:4px 12px;color:var(--text-aux);font-weight:400"></th>
+          <th style="padding:4px 12px;color:var(--text-aux);font-weight:400">Normal</th>
+          <th style="padding:4px 12px;color:var(--text-aux);font-weight:400">Icon Text</th>
+          <th style="padding:4px 12px;color:var(--text-aux);font-weight:400">Outline</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="padding:6px 12px;color:var(--text-aux)">Rest</td>
+            <td style="padding:6px 12px"><button class="btn btn-solid btn-sm">Button</button></td>
+            <td style="padding:6px 12px"><button class="btn btn-solid btn-sm"><span class="material-symbols-rounded" style="font-size:16px">edit</span>Button</button></td>
+            <td style="padding:6px 12px"><button class="btn btn-outline btn-sm">Button</button></td>
+          </tr>
+          <tr><td style="padding:6px 12px;color:var(--text-aux)">Hover</td>
+            <td style="padding:6px 12px"><button class="btn btn-solid btn-sm" style="background:#2462FF">Button</button></td>
+            <td style="padding:6px 12px"><button class="btn btn-solid btn-sm" style="background:#2462FF"><span class="material-symbols-rounded" style="font-size:16px">edit</span>Button</button></td>
+            <td style="padding:6px 12px"><button class="btn btn-outline btn-sm" style="background:var(--color-brand-secondary-3)">Button</button></td>
+          </tr>
+          <tr><td style="padding:6px 12px;color:var(--text-aux)">Pressed</td>
+            <td style="padding:6px 12px"><button class="btn btn-solid btn-sm" style="background:#2455A8">Button</button></td>
+            <td style="padding:6px 12px"><button class="btn btn-solid btn-sm" style="background:#2455A8"><span class="material-symbols-rounded" style="font-size:16px">edit</span>Button</button></td>
+            <td style="padding:6px 12px"><button class="btn btn-outline btn-sm" style="background:var(--color-brand-secondary-2);color:white">Button</button></td>
+          </tr>
+          <tr><td style="padding:6px 12px;color:var(--text-aux)">Disable</td>
+            <td style="padding:6px 12px"><button class="btn btn-solid btn-sm disabled">Button</button></td>
+            <td style="padding:6px 12px"><button class="btn btn-solid btn-sm disabled"><span class="material-symbols-rounded" style="font-size:16px">edit</span>Button</button></td>
+            <td style="padding:6px 12px"><button class="btn btn-outline btn-sm disabled">Button</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 07. Component (Spacing & Radius) -->
+<section>
+  <h2 data-i18n="s07">07. 組件（間距與圓角）</h2>
+
+  <div style="display:flex;gap:48px;flex-wrap:wrap">
+    <!-- Radius (left) -->
+    <div style="flex:1;min-width:380px">
+      <h3 data-i18n="radius_title">圓角半徑 Radius（數值不固定，僅供參考）</h3>
+      <p style="font-size:13px;color:var(--text-aux);margin-bottom:20px" data-i18n="radius_rule">尺寸越大的組件適用越大的圓角（不超過按鈕高度的1/4）</p>
+      <div style="display:flex;gap:12px">
+        <div style="position:relative;width:260px;height:240px">
+          <div style="position:absolute;bottom:0;left:0;width:260px;height:240px;background:var(--color-brand-primary);border-radius:20px"></div>
+          <div style="position:absolute;bottom:0;left:0;width:210px;height:185px;background:var(--color-brand-secondary-1);border-radius:16px"></div>
+          <div style="position:absolute;bottom:0;left:0;width:165px;height:130px;background:var(--color-brand-secondary-2);border-radius:12px"></div>
+          <div style="position:absolute;bottom:0;left:0;width:125px;height:75px;background:var(--color-brand-secondary-3);border-radius:8px"></div>
+        </div>
+        <div style="position:relative;height:240px;font-size:12px;width:120px">
+          <div style="position:absolute;top:0"><strong style="color:var(--color-brand-primary)">20px</strong><br><span style="color:var(--text-aux)" data-i18n="r_container">圓頭容器</span></div>
+          <div style="position:absolute;top:55px"><strong style="color:var(--color-brand-primary)">16px</strong><br><span style="color:var(--text-aux)" data-i18n="r_large">大組件</span></div>
+          <div style="position:absolute;top:110px"><strong style="color:var(--color-brand-primary)">12px</strong><br><span style="color:var(--text-aux)" data-i18n="r_card">卡片、小組件</span></div>
+          <div style="position:absolute;top:165px"><strong style="color:var(--color-brand-primary)">8px</strong><br><span style="color:var(--text-aux)" data-i18n="r_btn">按鈕、輸入框、小標籤</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spacing (right) -->
+    <div style="flex:1;min-width:380px">
+      <h3 data-i18n="spacing_title">基本間距（使用4的倍數系統）</h3>
+      <div style="display:flex;gap:16px;margin-top:20px">
+        <!-- Bars column -->
+        <div style="display:flex;flex-direction:column;width:200px;gap:0">
+          <div style="height:16px;background:var(--color-brand-primary);border-radius:3px"></div>
+          <div style="height:12px"></div>
+          <div style="height:16px;background:var(--color-brand-primary);border-radius:3px"></div>
+          <div style="height:28px"></div>
+          <div style="height:16px;background:var(--color-brand-secondary-1);border-radius:3px"></div>
+          <div style="height:48px"></div>
+          <div style="height:16px;background:var(--color-brand-secondary-2);border-radius:3px"></div>
+          <div style="height:80px"></div>
+          <div style="height:16px;background:var(--color-brand-secondary-3);border-radius:3px"></div>
+        </div>
+        <!-- Labels column -->
+        <div style="display:flex;flex-direction:column;font-size:12px;gap:0">
+          <div style="height:44px;display:flex;align-items:center"><div><strong style="font-size:13px">8-16px <span data-i18n="sp_sm">小間距</span></strong><br><span style="color:var(--text-aux)" data-i18n="sp_sm_desc">應用於小元素（按鍵）、強相關文字之間</span></div></div>
+          <div style="height:44px;display:flex;align-items:center"><div><strong style="font-size:13px">24-32px <span data-i18n="sp_md">中間距</span></strong><br><span style="color:var(--text-aux)" data-i18n="sp_md_desc">應用於小模塊、同組元素之間</span></div></div>
+          <div style="height:64px;display:flex;align-items:center"><div><strong style="font-size:13px">32-64px <span data-i18n="sp_lg">大間距</span></strong><br><span style="color:var(--text-aux)" data-i18n="sp_lg_desc">應用於大模塊、頁面段落之間</span></div></div>
+          <div style="height:96px;display:flex;align-items:center"><div><strong style="font-size:13px">64-96px <span data-i18n="sp_xl">超大間距</span></strong><br><span style="color:var(--text-aux)" data-i18n="sp_xl_desc">應用於頁面與模塊之間分割</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08. Shadow & Material -->
+<section>
+  <h2 data-i18n="s08">08. 陰影與材質</h2>
+
+  <div style="display:flex;border-radius:20px;overflow:hidden;min-height:380px">
+    <!-- Left: Shadow -->
+    <div style="flex:1;background:var(--section-bg);padding:32px;display:flex;flex-direction:column">
+      <div style="font-size:16px;font-weight:700;color:var(--color-gray-2);margin-bottom:8px;letter-spacing:1px" data-i18n="shadow_title">陰影規範</div>
+      <div style="font-size:13px;color:var(--text-aux);margin-bottom:24px" data-i18n="shadow_desc">不使用純黑色，保持柔和度，讓頁面更乾淨且協調統一</div>
+      <div style="display:flex;gap:24px;align-items:flex-start;flex:1">
+        <div style="width:160px;height:160px;background:white;border-radius:16px;box-shadow:0px 12px 32px rgba(55,65,81,0.1)"></div>
+        <div style="font-size:13px;color:var(--text-aux)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><div style="width:28px;height:28px;background:#374151;border-radius:4px"></div><span style="font-family:monospace">#374151</span></div>
+          <div style="font-family:monospace;line-height:2">x: 0&nbsp;&nbsp;y:12<br><span data-i18n="shadow_opacity">透明度：10%</span><br><span data-i18n="shadow_blur">模糊：32</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Right: Material -->
+    <div style="flex:1;background:linear-gradient(180deg, #4D7FFF 2%, #CCDBFF 100%);padding:32px;display:flex;flex-direction:column">
+      <div style="font-size:16px;font-weight:500;color:white;margin-bottom:24px;letter-spacing:1px" data-i18n="material_desc">也可適時加入材質效果增加網頁質感</div>
+      <div style="display:flex;gap:24px;flex:1;align-items:flex-start">
+        <div style="text-align:center;flex:1">
+          <div style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.86);margin-bottom:12px;letter-spacing:1px" data-i18n="frosted">毛玻璃效果</div>
+          <div style="width:160px;height:160px;margin:0 auto;border-radius:28px;background:rgba(255,255,255,0.05);box-shadow:inset 0 16px 32px rgba(255,255,255,0.2),inset 0 0 17px rgba(255,255,255,0.5),inset 0 0 2px rgba(255,255,255,1),inset 0 0 1px rgba(255,255,255,1);filter:blur(0.5px)"></div>
+        </div>
+        <div style="text-align:center;flex:1">
+          <div style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.86);margin-bottom:12px;letter-spacing:1px" data-i18n="liquid">液態玻璃效果</div>
+          <div style="width:160px;height:160px;margin:0 auto;border-radius:28px;background:rgba(255,255,255,0.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.3);box-shadow:0 8px 32px rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09. Icons -->
+<section>
+  <h2 data-i18n="s09">09. 圖標</h2>
+  <p class="spec" style="margin-bottom:24px" data-i18n="icon_note">Icon Resources：Google Material Symbols · 預設樣式：Rounded</p>
+
+  <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:32px">
+    <!-- Left: Spacing + Rules -->
+    <div style="flex:1;min-width:300px">
+      <h3 data-i18n="icon_rules_title">圖標規範</h3>
+      <div style="font-size:13px;color:var(--text-aux);margin-bottom:16px" data-i18n="icon_style_desc">適用較為圓潤具有圓角的圖標，不適合稜角分明的圖標</div>
+
+      <h3>Spacing</h3>
+      <p style="font-size:13px;color:var(--text-aux);margin-bottom:16px" data-i18n="icon_spacing_desc">Feather icons at 24px height and width with 2px stroke weight</p>
+      <div style="display:flex;gap:24px;align-items:center;margin-bottom:24px">
+        <div style="position:relative;width:100px;height:100px;background:var(--color-gray-7);border-radius:4px;display:flex;align-items:center;justify-content:center">
+          <div style="position:absolute;inset:8px;border:1px dashed var(--color-gray-5)"></div>
+          <span class="material-symbols-rounded" style="font-size:48px;color:var(--color-brand-primary)">alarm</span>
+        </div>
+        <div style="font-size:14px;line-height:2.2">
+          <div>Margins&nbsp;&nbsp;<strong>2 px</strong></div>
+          <div>Full size&nbsp;&nbsp;<strong>24 px</strong></div>
+        </div>
+      </div>
+
+      <!-- Icon sets -->
+      <h3>Icon sets</h3>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:8px">
+        <div>
+          <div style="font-size:13px;color:var(--text-aux);margin-bottom:8px" data-i18n="icon_outlined">Outlined（預設）</div>
+          <div class="icon-grid">
+            <div class="icon-item"><span class="material-symbols-rounded">alarm</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded">bedtime</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded">favorite</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded">cottage</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded">add_reaction</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded">policy</span></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:13px;color:var(--text-aux);margin-bottom:8px">Filled</div>
+          <div class="icon-grid">
+            <div class="icon-item"><span class="material-symbols-rounded" style="font-variation-settings:'FILL' 1">alarm</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded" style="font-variation-settings:'FILL' 1">bedtime</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded" style="font-variation-settings:'FILL' 1">favorite</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded" style="font-variation-settings:'FILL' 1">cottage</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded" style="font-variation-settings:'FILL' 1">add_reaction</span></div>
+            <div class="icon-item"><span class="material-symbols-rounded" style="font-variation-settings:'FILL' 1">policy</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Size + Material Symbols + Resources -->
+    <div style="flex:1;min-width:280px">
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:13px;margin-bottom:16px">
+        <div style="background:var(--section-bg);border-radius:8px;padding:12px 16px">
+          <strong data-i18n="icon_style_label">Style 樣式</strong>
+          <div style="color:var(--text-aux);margin-top:4px">Rounded</div>
+        </div>
+        <div style="background:var(--section-bg);border-radius:8px;padding:12px 16px">
+          <strong data-i18n="icon_weight_label">Weight 粗細</strong>
+          <div style="color:var(--text-aux);margin-top:4px" data-i18n="icon_weight_desc">圖標應挑選與其搭配文字粗細相當</div>
+        </div>
+        <div style="background:var(--section-bg);border-radius:8px;padding:12px 16px">
+          <strong data-i18n="icon_size_label">Size 尺寸</strong>
+          <div style="color:var(--text-aux);margin-top:4px" data-i18n="icon_size_desc">推薦 16px、24px、32px、48px、64px</div>
+        </div>
+      </div>
+
+      <div style="background:var(--section-bg);border-radius:12px;padding:16px;font-size:13px;margin-bottom:16px">
+        <div style="font-weight:600;margin-bottom:12px">Material Symbols</div>
+        <div style="display:inline-block;background:var(--color-brand-secondary-3);color:var(--color-brand-primary);padding:2px 10px;border-radius:4px;font-size:12px;margin-bottom:12px">Rounded</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div><span style="color:var(--text-aux)">Weight</span><br><strong>400</strong></div>
+          <div><span style="color:var(--text-aux)">Fill</span><br><strong>Off</strong></div>
+          <div><span style="color:var(--text-aux)">Grade</span><br><strong>Normal</strong></div>
+          <div><span style="color:var(--text-aux)">Optical size</span><br><strong>24dp</strong></div>
+        </div>
+      </div>
+
+      <div style="font-size:12px">
+        <div style="color:var(--text-aux)">Icon Resources : Google Font Material Symbols</div>
+        <a href="https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded" target="_blank" style="color:var(--color-brand-primary);word-break:break-all">https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script>
+const i18n = {
+  zh: {
+    s01: '01. 淺色色彩', s02: '02. 深色色彩', s03: '03. 色彩對比（淺色與深色模式）',
+    s04: '04. 文字排版', s05: '05. 格線系統', s06: '06. 按鈕',
+    s07: '07. 間距與圓角', s08: '08. 陰影與材質', s09: '09. 圖標',
+    brand: '品牌色', brand_usage: '— 標題文字 / 按鈕 / 圖標 / 卡片區塊',
+    green: '輔助色 — 綠', orange: '輔助色 — 橘/金',
+    cat_usage: '— 作為區分類別使用',
+    gray: '灰階色', gray_usage: '— 文字顏色（重要程度與深淺成正比）/ 背景色 / 描邊色',
+    state: '狀態色', state_dark: '狀態色（深色）',
+    dark_note: '降低整體色彩飽和度，適量增加明度，使視覺上更舒適',
+    contrast_note: '不固定，僅為建議配色參考。色彩對比符合無障礙網頁 WCAG 2.1 AA 級規範。除了藍色以外的 Brand Color，同樣可參考此配色組合。',
+    light_mode: '淺色模式', dark_mode: '深色模式',
+    dark_contrast_note: '除了藍色以外的 Brand Color，同樣可參考此配色組合',
+    typo_note: '字體：蘋方(PingFang) + SF Pro (Apple) / 思源黑體 + Roboto (Win/Android)。行高建議設置為字號的 1.2-1.5 倍。段間距建議設置為字號 2-2.5 倍，閱讀起來更舒適。注意不要讓標題字過密，應留出行距與上下間距。',
+    th_level: '層級', th_specimen: '範例', th_weight: '字重', th_size: '字號',
+    h1_label: '頁面主標題 H1', h2_label: '模塊標題 H2', h3_label: '小標題/內容子標題 H3',
+    h4_label: '正文 H4', h5_label: '輔助與說明文字 H5', h6_label: '標籤/版權/最小字號 H6',
+    text_color: '字體顏色',
+    gray1_usage: '正文、標題、按鈕文字，通常選用深灰色',
+    gray5_usage: '註釋或輔助性文字，通常選用淺灰色',
+    grid_note: '頁面寬度: 1440px · 內容區域: 1200px · 首屏高度: 900px · 12 欄 · 間距 24px · 導覽列: 60-100px · Footer: \u226580px · 最小點擊區域: 44px',
+    grid_12: '12 欄格線', layout_patterns: '佈局模式',
+    btn_padding_title: '內間距規範:', btn_icon_gap: '圖標與文字間距 > 5px（依據字號大小調整）',
+    btn_icon_size: '圖標大小 16 - 20px（與文字視覺高度對齊即可）',
+    btn_sizes: '按鈕尺寸', btn_states_title: '按鈕狀態',
+    spacing_title: '基本間距（使用4的倍數系統）',
+    sp_sm: '小間距', sp_sm_desc: '應用於小元素（按鍵）、強相關文字之間',
+    sp_md: '中間距', sp_md_desc: '應用於小模塊、同組元素之間',
+    sp_lg: '大間距', sp_lg_desc: '應用於大模塊、頁面段落之間',
+    sp_xl: '超大間距', sp_xl_desc: '應用於頁面與模塊之間分割',
+    radius_title: '圓角半徑 Radius（數值不固定，僅供參考）',
+    r_btn: '按鈕、輸入框、小標籤', r_card: '卡片、小組件', r_large: '大組件', r_container: '圓頭容器',
+    radius_rule: '尺寸越大的組件適用越大的圓角（不超過按鈕高度的1/4）',
+    shadow_title: '陰影規範', shadow_desc: '不使用純黑色，保持柔和度，讓頁面更乾淨且協調統一',
+    shadow_opacity: '透明度：10%', shadow_blur: '模糊：32',
+    material_title: '材質效果', material_desc: '也可適時加入材質效果增加網頁質感',
+    frosted: '毛玻璃效果', liquid: '液態玻璃效果',
+    icon_note: 'Icon Resources：Google Material Symbols · 預設樣式：Rounded',
+    icon_spacing_desc: 'Feather icons at 24px height and width with 2px stroke weight',
+    icon_rules_title: '圖標規範',
+    icon_style_label: 'Style 樣式', icon_style_desc: '適用較為圓潤具有圓角的圖標，不適合稜角分明的圖標',
+    icon_weight_label: 'Weight 粗細', icon_weight_desc: '圖標應挑選與其搭配文字粗細相當',
+    icon_size_label: 'Size 尺寸', icon_size_desc: '推薦 16px、24px、32px、48px、64px',
+    icon_outlined: 'Outlined（預設）',
+    grid_page_width: '頁面尺寸 1440px', grid_nav: '導航欄 (60-100px)',
+    grid_fold: '首屏高度 900px', grid_content: '內容區域 1200px',
+    grid_tap: '最小點擊區域 44px', grid_tap_note: '（符合 WCAG2.1標準）',
+    grid_footer: '頁腳（>80px）', grid_12col: '12 欄系統',
+    grid_12_desc: '由 12 個欄和 11 個間距組成，可搭建不同內容配置比例，靈活排列成2列、3列、4列等多種佈局方式。',
+    grid_gutter: '（列間距默認為24px）',
+  },
+  en: {
+    s01: '01. Colors (Light)', s02: '02. Colors (Dark)', s03: '03. Color Contrast (Light and Dark Color Modes)',
+    s04: '04. Typography', s05: '05. Grid System', s06: '06. Buttons',
+    s07: '07. Component (Spacing & Radius)', s08: '08. Shadow & Material', s09: '09. Iconography',
+    brand: 'Brand Colors', brand_usage: '\u2014 titles, buttons, icons, card blocks',
+    green: 'Accent \u2014 Green', orange: 'Accent \u2014 Orange/Gold',
+    cat_usage: '\u2014 category distinction',
+    gray: 'Gray Colors', gray_usage: '\u2014 text (importance correlates with darkness) / background / border',
+    state: 'State Colors', state_dark: 'State Colors (Dark)',
+    dark_note: 'Reduce overall color saturation, moderately increase brightness for comfortable visuals',
+    contrast_note: 'Not fixed \u2014 recommended pairings only. Meets WCAG 2.1 AA. Other brand colors can reference the same pairing patterns.',
+    light_mode: 'Light Mode', dark_mode: 'Dark Mode',
+    dark_contrast_note: 'Other brand colors (not just blue) can also reference these pairing patterns.',
+    typo_note: 'Font: PingFang + SF Pro (Apple) / Source Han Sans + Roboto (Win/Android). Line height: 1.2\u20131.5x font size. Paragraph spacing: 2\u20132.5x font size. Avoid pure black for body text.',
+    th_level: 'Level', th_specimen: 'Specimen', th_weight: 'Weight', th_size: 'Size',
+    h1_label: 'Page Title H1', h2_label: 'Section Title H2', h3_label: 'Subsection Title H3',
+    h4_label: 'Body text H4', h5_label: 'Auxiliary text H5', h6_label: 'Label / copyright H6',
+    text_color: 'Text Color',
+    gray1_usage: 'body, headings, buttons',
+    gray5_usage: 'auxiliary, annotations',
+    grid_note: 'Page: 1440px \u00b7 Content: 1200px \u00b7 Above-fold: 900px \u00b7 12 columns \u00b7 24px gutter \u00b7 Nav: 60-100px \u00b7 Footer: \u226580px \u00b7 Min tap: 44px',
+    grid_12: '12-Column Grid', layout_patterns: 'Layout Patterns',
+    btn_padding_title: 'Padding rules:', btn_icon_gap: 'Icon-to-text gap > 5px (adjust with font size)',
+    btn_icon_size: 'Icon size 16-20px (align with text visual height)',
+    btn_sizes: 'Button Sizes', btn_states_title: 'Button States',
+    spacing_title: 'Spacing (4x base system)',
+    sp_sm: 'Small', sp_sm_desc: 'Small elements (buttons), closely related text',
+    sp_md: 'Medium', sp_md_desc: 'Small modules, grouped elements',
+    sp_lg: 'Large', sp_lg_desc: 'Large modules, page sections',
+    sp_xl: 'Extra Large', sp_xl_desc: 'Page-to-module separation',
+    radius_title: 'Border Radius (reference values, not fixed)',
+    r_btn: 'Buttons, inputs, tags', r_card: 'Cards, widgets', r_large: 'Large widgets', r_container: 'Rounded containers',
+    radius_rule: 'Larger components use larger radius (never exceed 1/4 of element height)',
+    shadow_title: 'Shadow Spec', shadow_desc: 'No pure black. Keep soft for a clean, coordinated look.',
+    shadow_opacity: 'Opacity: 10%', shadow_blur: 'Blur: 32',
+    material_title: 'Material Effects', material_desc: 'Add material effects to enhance visual quality',
+    frosted: 'Frosted Glass', liquid: 'Liquid Glass',
+    icon_note: 'Icon Resources: Google Material Symbols \u00b7 Default style: Rounded',
+    icon_spacing_desc: 'Feather icons at 24px height and width with 2px stroke weight',
+    icon_rules_title: 'Icon Rules',
+    icon_style_label: 'Style', icon_style_desc: 'Use rounded icons with soft corners, not sharp-edged icons',
+    icon_weight_label: 'Weight', icon_weight_desc: 'Icon weight should match accompanying text weight',
+    icon_size_label: 'Size', icon_size_desc: 'Recommended: 16px, 24px, 32px, 48px, 64px',
+    icon_outlined: 'Outlined (Default)',
+    grid_page_width: 'Page width 1440px', grid_nav: 'Nav bar (60-100px)',
+    grid_fold: 'Above-fold 900px', grid_content: 'Content area 1200px',
+    grid_tap: 'Min tap target 44px', grid_tap_note: '(WCAG 2.1 compliant)',
+    grid_footer: 'Footer (>80px)', grid_12col: '12-Column System',
+    grid_12_desc: '12 columns with 11 gutters. Flexibly arranged into 2, 3, 4-column layouts.',
+    grid_gutter: '(Column gutter default: 24px)',
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n[lang][key]) el.textContent = i18n[lang][key];
+  });
+  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang === 'zh' ? 'zh-TW' : 'en';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/**
+ * NYCU LIFE Design Tokens — CSS Custom Properties
+ *
+ * Source of truth: https://www.figma.com/design/eshYmSn9jeEEti38tO1GGU
+ * Standard: WCAG 2.1 AA | Version: v1.0 (2026.02.14)
+ *
+ * Usage: @import or copy into your project's global stylesheet.
+ */
+
+:root {
+  /* ========== Brand — Blue ========== */
+  /* Used for: titles, buttons, icons, card blocks */
+  --color-brand-primary: #0045F2;
+  --color-brand-secondary-1: #2462FF;
+  --color-brand-secondary-2: #4D7FFF;
+  --color-brand-secondary-3: #CCDBFF;
+  --color-brand-secondary-4: #2455A8;
+
+  /* ========== Accent — Green ========== */
+  /* Used for: category distinction (auxiliary) */
+  --color-accent-green-primary: #80DA0A;
+  --color-accent-green-secondary-1: #98E236;
+  --color-accent-green-secondary-2: #AFED5E;
+  --color-accent-green-secondary-3: #D5F1B1;
+  --color-accent-green-secondary-4: #EDF0F5;
+
+  /* ========== Accent — Orange/Gold ========== */
+  /* Used for: category distinction (auxiliary) */
+  --color-accent-orange-primary: #F2A500;
+  --color-accent-orange-secondary-1: #FFBA24;
+  --color-accent-orange-secondary-2: #FFC64D;
+  --color-accent-orange-secondary-3: #FFE5AD;
+  --color-accent-orange-secondary-4: #6C4C08;
+
+  /* ========== Neutrals ========== */
+  /* Text color importance correlates with darkness; also backgrounds/borders */
+  --color-black: #000000;
+  --color-gray-1: #333333;
+  --color-gray-2: #374151;
+  --color-gray-3: #4B5563;
+  --color-gray-4: #6B7280;
+  --color-gray-5: #9CA3AF;
+  --color-gray-6: #D1D5DB;
+  --color-gray-7: #F3F4F6;
+  --color-white: #FFFFFF;
+
+  /* ========== State ========== */
+  --color-info: #A0C3FF;
+  --color-success: #0FBD81;
+  --color-warning: #F5913D;
+  --color-error: #FC4C4D;
+
+  /* ========== Typography ========== */
+  --font-family-sans: system-ui, -apple-system, "PingFang TC", "PingFang SC",
+    "SF Pro Text", "Source Han Sans TC", "Noto Sans CJK TC",
+    "Roboto", "Helvetica Neue", Arial, sans-serif;
+
+  --text-h1: 36px;       /* Bold (700)    — page title */
+  --text-h2: 28px;       /* Semibold (600) — section title */
+  --text-h3: 22px;       /* Medium (500)  — subsection title */
+  --text-body: 16px;     /* Regular (400) — body text */
+  --text-aux: 14px;      /* Regular (400) — auxiliary / description */
+  --text-small: 12px;    /* Regular (400) — label / copyright */
+
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Line height: 1.2–1.5x font size; paragraph spacing: 2–2.5x font size */
+
+  /* ========== Spacing (4px base) ========== */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+
+  /* ========== Border Radius ========== */
+  /* Larger components → larger radius. Never exceed 1/4 of element height. */
+  --radius-sm: 8px;   /* buttons, inputs, small tags */
+  --radius-md: 12px;  /* cards, small widgets */
+  --radius-lg: 16px;  /* large widgets */
+  --radius-xl: 20px;  /* rounded containers */
+
+  /* ========== Shadow ========== */
+  /* No pure black. Color: Gray 2 (#374151) at 10% opacity. */
+  --shadow-card: 0px 12px 32px rgba(55, 65, 81, 0.1);
+
+  /* ========== Layout ========== */
+  --layout-page-width: 1440px;
+  --layout-content-max-width: 1200px;
+  --layout-above-fold: 900px;
+  --layout-grid-columns: 12;
+  --layout-grid-gutter: 24px;
+  --layout-nav-height: 80px;
+  --layout-footer-min-height: 80px;
+  --layout-min-tap-target: 44px;
+
+  /* ========== Icons ========== */
+  /* Source: Google Material Symbols (Rounded) */
+  --icon-size: 24px;
+  --icon-margin: 2px;
+  --icon-stroke: 2px;
+  --icon-btn-size: 18px; /* 16–20px range, use within buttons */
+}
+
+/* ========== Dark Mode ========== */
+/* Principle: reduce saturation, moderately increase brightness */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Brand — Blue */
+    --color-brand-primary: #2F60DA;
+    --color-brand-secondary-1: #527AE0;
+    --color-brand-secondary-2: #BECDF4;
+    --color-brand-secondary-3: #D9E3FC;
+    --color-brand-secondary-4: #EDF0F5;
+
+    /* Accent — Green */
+    --color-accent-green-primary: #8BD22D;
+    --color-accent-green-secondary-1: #A3E052;
+    --color-accent-green-secondary-2: #D1F0A8;
+    --color-accent-green-secondary-3: #E3F6CB;
+    --color-accent-green-secondary-4: #EDF0F5;
+
+    /* Accent — Orange/Gold */
+    --color-accent-orange-primary: #E0A629;
+    --color-accent-orange-secondary-1: #E5B54D;
+    --color-accent-orange-secondary-2: #F5DBA3;
+    --color-accent-orange-secondary-3: #F7ECD4;
+    --color-accent-orange-secondary-4: #FFF7E5;
+
+    /* State */
+    --color-info: #A9C5F5;
+    --color-success: #11D491;
+    --color-warning: #E9A063;
+    --color-error: #ED5B5B;
+  }
+}
