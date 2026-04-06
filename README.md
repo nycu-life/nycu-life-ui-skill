@@ -12,8 +12,6 @@ Install via [`npx skills`](https://skills.sh) — installs to `~/.agents/skills/
 npx skills add nycu-life/nycu-life-ui-skill
 ```
 
-Supports Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, and [40+ other agents](https://skills.sh).
-
 ### Per-Agent Manual Install
 
 <details>
