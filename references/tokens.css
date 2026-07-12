@@ -1,139 +1,175 @@
 /**
- * NYCU LIFE Design Tokens — CSS Custom Properties
- *
- * Source of truth: https://www.figma.com/design/eshYmSn9jeEEti38tO1GGU
- * Standard: WCAG 2.1 AA | Version: v1.0 (2026.02.14)
- *
- * Usage: @import or copy into your project's global stylesheet.
+ * Generated from references/tokens.json. Do not edit by hand.
+ * NYCU LIFE Design Tokens v2.0.0
  */
-
 :root {
-  /* ========== Brand — Blue ========== */
-  /* Used for: titles, buttons, icons, card blocks */
-  --color-brand-primary: #0045F2;
-  --color-brand-secondary-1: #2462FF;
-  --color-brand-secondary-2: #4D7FFF;
-  --color-brand-secondary-3: #CCDBFF;
-  --color-brand-secondary-4: #2455A8;
-
-  /* ========== Accent — Green ========== */
-  /* Used for: category distinction (auxiliary) */
-  --color-accent-green-primary: #80DA0A;
-  --color-accent-green-secondary-1: #98E236;
-  --color-accent-green-secondary-2: #AFED5E;
-  --color-accent-green-secondary-3: #D5F1B1;
-  --color-accent-green-secondary-4: #EDF0F5;
-
-  /* ========== Accent — Orange/Gold ========== */
-  /* Used for: category distinction (auxiliary) */
-  --color-accent-orange-primary: #F2A500;
-  --color-accent-orange-secondary-1: #FFBA24;
-  --color-accent-orange-secondary-2: #FFC64D;
-  --color-accent-orange-secondary-3: #FFE5AD;
-  --color-accent-orange-secondary-4: #6C4C08;
-
-  /* ========== Neutrals ========== */
-  /* Text color importance correlates with darkness; also backgrounds/borders/stroke (描邊色) */
-  --color-black: #000000;
-  --color-gray-1: #333333;
-  --color-gray-2: #374151;
-  --color-gray-3: #4B5563;
-  --color-gray-4: #6B7280;
-  --color-gray-5: #9CA3AF;
-  --color-gray-6: #D1D5DB;
-  --color-gray-7: #F3F4F6;
+  --color-logo-blue: #0922E7;
+  --color-logo-dark-background: #1B41C5;
+  --color-blue-900: #071C57;
+  --color-blue-800: #00318F;
+  --color-blue-700: #0039C7;
+  --color-blue-600: #0045F2;
+  --color-blue-500: #2462FF;
+  --color-blue-400: #5A78FF;
+  --color-blue-300: #90A9FF;
+  --color-blue-200: #CCDBFF;
+  --color-blue-100: #E9EEFF;
+  --color-blue-050: #F5F7FF;
+  --color-night-canvas: #000000;
+  --color-night-border: #2B2B2B;
+  --color-green-700: #3E7100;
+  --color-green-500: #80DA0A;
+  --color-green-200: #C8F293;
+  --color-green-100: #E7F8CF;
+  --color-green-800: #20390D;
+  --color-orange-700: #6C4C08;
+  --color-orange-500: #F2A500;
+  --color-orange-200: #FFD477;
+  --color-orange-100: #FFF0CF;
+  --color-orange-800: #513907;
+  --color-red-700: #A81F28;
+  --color-red-100: #FFE1E3;
+  --color-gray-950: #10162A;
+  --color-gray-900: #17213F;
+  --color-gray-700: #4B5674;
+  --color-gray-600: #66708A;
+  --color-gray-400: #9EA8BF;
+  --color-gray-300: #C5CEE0;
+  --color-gray-200: #D9E1F0;
+  --color-gray-100: #E9EEF7;
+  --color-gray-050: #F7F9FC;
   --color-white: #FFFFFF;
-
-  /* ========== State ========== */
-  --color-info: #A0C3FF;
-  --color-success: #0FBD81;
-  --color-warning: #F5913D;
-  --color-error: #FC4C4D;
-
-  /* ========== Typography ========== */
-  --font-family-sans: system-ui, -apple-system, "PingFang TC", "PingFang SC",
-    "SF Pro Text", "Source Han Sans TC", "Noto Sans CJK TC",
-    "Roboto", "Helvetica Neue", Arial, sans-serif;
-
-  --text-h1: 36px;       /* Bold (700)    — page title */
-  --text-h2: 28px;       /* Semibold (600) — section title */
-  --text-h3: 22px;       /* Medium (500)  — subsection title */
-  --text-body: 16px;     /* Regular (400) — body text */
-  --text-aux: 14px;      /* Regular (400) — auxiliary / description */
-  --text-small: 12px;    /* Regular (400) — label / copyright */
-
-  --font-weight-bold: 700;
-  --font-weight-semibold: 600;
-  --font-weight-medium: 500;
-  --font-weight-regular: 400;
-
-  /* Line height: 1.2–1.5x font size; paragraph spacing: 2–2.5x font size */
-
-  /* ========== Spacing (4px base) ========== */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 24px;
-  --space-lg: 48px;
-  --space-xl: 80px;
-
-  /* ========== Border Radius ========== */
-  /* Larger components → larger radius. Never exceed 1/4 of element height. */
-  --radius-sm: 8px;   /* buttons, inputs, small tags */
-  --radius-md: 12px;  /* cards, small widgets */
-  --radius-lg: 16px;  /* large widgets */
-  --radius-xl: 20px;  /* rounded containers */
-
-  /* ========== Shadow ========== */
-  /* No pure black. Color: Gray 2 (#374151) at 10% opacity. */
-  --shadow-card: 0px 12px 32px rgba(55, 65, 81, 0.1);
-
-  /* ========== Layout ========== */
-  --layout-page-width: 1440px;
-  --layout-content-max-width: 1200px;
-  --layout-above-fold: 900px;
-  --layout-grid-columns: 12;
-  --layout-grid-gutter: 24px;
-  --layout-nav-height: 80px;
-  --layout-footer-min-height: 80px;
-  --layout-min-tap-target: 44px;
-
-  /* ========== Icons ========== */
-  /* Source: Google Material Symbols (Rounded) */
-  --icon-size: 24px;
-  --icon-margin: 2px;
-  --icon-stroke: 2px;
-  --icon-btn-size: 18px; /* 16–20px range, use within buttons */
+  --color-canvas: #F7F9FC;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-brand: #1B41C5;
+  --color-surface-soft: #E9EEFF;
+  --color-text-primary: #17213F;
+  --color-text-secondary: #4B5674;
+  --color-text-muted: #66708A;
+  --color-text-inverse: #FFFFFF;
+  --color-text-on-brand: #FFFFFF;
+  --color-text-brand: #0922E7;
+  --color-border-subtle: #D9E1F0;
+  --color-border-strong: #9EA8BF;
+  --color-action-primary: #0045F2;
+  --color-action-primary-hover: #0039C7;
+  --color-action-primary-pressed: #00318F;
+  --color-action-on-primary: #FFFFFF;
+  --color-focus-ring: #5A78FF;
+  --color-category-green-surface: #E7F8CF;
+  --color-category-green-text: #3E7100;
+  --color-category-orange-surface: #FFF0CF;
+  --color-category-orange-text: #6C4C08;
+  --color-info-surface: #E9EEFF;
+  --color-info-text: #00318F;
+  --color-success-surface: #E7F8CF;
+  --color-success-text: #3E7100;
+  --color-warning-surface: #FFF0CF;
+  --color-warning-text: #6C4C08;
+  --color-danger-surface: #FFE1E3;
+  --color-danger-text: #A81F28;
+  --color-action-disabled-surface: #E9EEF7;
+  --color-action-disabled-text: #4B5674;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-pill: 999px;
+  --shadow-raised: 0 20px 60px rgba(23, 33, 63, 0.12);
+  --shadow-focus: 0 0 0 4px rgba(90, 120, 255, 0.35);
+  --motion-fast: 140ms;
+  --motion-normal: 220ms;
+  --motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --layout-content: 75rem;
+  --layout-reading: 45rem;
+  --layout-tap-target: 2.75rem;
+  --font-sans: 'Noto Sans TC', system-ui, -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Segoe UI', sans-serif;
+  --font-display: 'Noto Sans TC', system-ui, -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Segoe UI', sans-serif;
+  --text-display: clamp(2.625rem, 5.5vw, 4.75rem);
+  --text-title: clamp(1.875rem, 3.2vw, 3rem);
+  --text-heading: clamp(1.25rem, 2vw, 1.875rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
 }
 
-/* ========== Dark Mode ========== */
-/* Principle: reduce saturation, moderately increase brightness */
+:root[data-theme="dark"] {
+  --color-canvas: #000000;
+  --color-surface: #000000;
+  --color-surface-raised: #111111;
+  --color-surface-brand: #1B41C5;
+  --color-surface-soft: #171717;
+  --color-text-primary: #F5F7FF;
+  --color-text-secondary: #C5CEE0;
+  --color-text-muted: #9EA8BF;
+  --color-text-inverse: #000000;
+  --color-text-on-brand: #FFFFFF;
+  --color-text-brand: #90A9FF;
+  --color-border-subtle: #2B2B2B;
+  --color-border-strong: #606060;
+  --color-action-primary: #1B41C5;
+  --color-action-primary-hover: #1536AA;
+  --color-action-primary-pressed: #102B8F;
+  --color-action-on-primary: #FFFFFF;
+  --color-focus-ring: #CCDBFF;
+  --color-category-green-surface: #213B19;
+  --color-category-green-text: #C8F293;
+  --color-category-orange-surface: #4A3514;
+  --color-category-orange-text: #FFD477;
+  --color-info-surface: #151A2B;
+  --color-info-text: #CCDBFF;
+  --color-success-surface: #213B19;
+  --color-success-text: #C8F293;
+  --color-warning-surface: #4A3514;
+  --color-warning-text: #FFD477;
+  --color-danger-surface: #4A2027;
+  --color-danger-text: #FFB5BA;
+  --color-action-disabled-surface: #2B2B2B;
+  --color-action-disabled-text: #C5CEE0;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    /* Brand — Blue */
-    --color-brand-primary: #2F60DA;
-    --color-brand-secondary-1: #527AE0;
-    --color-brand-secondary-2: #BECDF4;
-    --color-brand-secondary-3: #D9E3FC;
-    --color-brand-secondary-4: #EDF0F5;
-
-    /* Accent — Green */
-    --color-accent-green-primary: #8BD22D;
-    --color-accent-green-secondary-1: #A3E052;
-    --color-accent-green-secondary-2: #D1F0A8;
-    --color-accent-green-secondary-3: #E3F6CB;
-    --color-accent-green-secondary-4: #EDF0F5;
-
-    /* Accent — Orange/Gold */
-    --color-accent-orange-primary: #E0A629;
-    --color-accent-orange-secondary-1: #E5B54D;
-    --color-accent-orange-secondary-2: #F5DBA3;
-    --color-accent-orange-secondary-3: #F7ECD4;
-    --color-accent-orange-secondary-4: #FFF7E5;
-
-    /* State */
-    --color-info: #A9C5F5;
-    --color-success: #11D491;
-    --color-warning: #E9A063;
-    --color-error: #ED5B5B;
+  :root:not([data-theme="light"]) {
+    --color-canvas: #000000;
+    --color-surface: #000000;
+    --color-surface-raised: #111111;
+    --color-surface-brand: #1B41C5;
+    --color-surface-soft: #171717;
+    --color-text-primary: #F5F7FF;
+    --color-text-secondary: #C5CEE0;
+    --color-text-muted: #9EA8BF;
+    --color-text-inverse: #000000;
+    --color-text-on-brand: #FFFFFF;
+    --color-text-brand: #90A9FF;
+    --color-border-subtle: #2B2B2B;
+    --color-border-strong: #606060;
+    --color-action-primary: #1B41C5;
+    --color-action-primary-hover: #1536AA;
+    --color-action-primary-pressed: #102B8F;
+    --color-action-on-primary: #FFFFFF;
+    --color-focus-ring: #CCDBFF;
+    --color-category-green-surface: #213B19;
+    --color-category-green-text: #C8F293;
+    --color-category-orange-surface: #4A3514;
+    --color-category-orange-text: #FFD477;
+    --color-info-surface: #151A2B;
+    --color-info-text: #CCDBFF;
+    --color-success-surface: #213B19;
+    --color-success-text: #C8F293;
+    --color-warning-surface: #4A3514;
+    --color-warning-text: #FFD477;
+    --color-danger-surface: #4A2027;
+    --color-danger-text: #FFB5BA;
+    --color-action-disabled-surface: #2B2B2B;
+    --color-action-disabled-text: #C5CEE0;
   }
 }

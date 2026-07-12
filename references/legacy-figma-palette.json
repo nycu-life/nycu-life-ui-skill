@@ -1,0 +1,37 @@
+{
+  "meta": { "name": "NYCU LIFE original Figma palette reference", "status": "legacy-reference", "note": "Preserves the original visual system; production UI uses semantic tokens from tokens.json." },
+  "palette": {
+    "light": {
+      "blue": ["#0045F2", "#2462FF", "#4D7FFF", "#CCDBFF", "#2455A8"],
+      "green": ["#80DA0A", "#98E236", "#AFED5E", "#D5F1B1", "#EDF0F5"],
+      "orange": ["#F2A500", "#FFBA24", "#FFC64D", "#FFE5AD", "#6C4C08"],
+      "neutral": ["#000000", "#333333", "#374151", "#4B5563", "#6B7280", "#9CA3AF", "#D1D5DB", "#F3F4F6", "#FFFFFF"],
+      "state": ["#A0C3FF", "#0FBD81", "#F5913D", "#FC4C4D"]
+    },
+    "dark": {
+      "blue": ["#2F60DA", "#527AE0", "#BECDF4", "#D9E3FC", "#EDF0F5"],
+      "green": ["#8BD22D", "#A3E052", "#D1F0A8", "#E3F6CB", "#EDF0F5"],
+      "orange": ["#E0A629", "#E5B54D", "#F5DBA3", "#F7ECD4", "#FFF7E5"],
+      "neutral": ["#000000", "#333333", "#374151", "#4B5563", "#6B7280", "#9CA3AF", "#D1D5DB", "#F3F4F6", "#FFFFFF"],
+      "state": ["#A9C5F5", "#11D491", "#E9A063", "#ED5B5B"]
+    }
+  },
+  "contrastPairs": [
+    { "foreground": "#FFFFFF", "background": "#0045F2", "ratio": 6.70, "classification": "normal" },
+    { "foreground": "#FFFFFF", "background": "#4D7FFF", "ratio": 3.62, "classification": "limited" },
+    { "foreground": "#2462FF", "background": "#CCDBFF", "ratio": 3.55, "classification": "limited" },
+    { "foreground": "#2455A8", "background": "#CCDBFF", "ratio": 5.15, "classification": "normal" },
+    { "foreground": "#2F60DA", "background": "#E5EBFA", "ratio": 4.62, "classification": "normal", "note": "Legacy background is not part of the original palette." },
+    { "foreground": "#BECDF4", "background": "#2F60DA", "ratio": 3.48, "classification": "limited" },
+    { "foreground": "#EDF0F5", "background": "#527AE0", "ratio": 3.52, "classification": "limited" },
+    { "foreground": "#D9E3FC", "background": "#2F60DA", "ratio": 4.29, "classification": "limited" }
+  ],
+  "commonMisusePairs": [
+    { "foreground": "#FFFFFF", "background": "#0FBD81", "ratio": 2.44, "classification": "decorative" },
+    { "foreground": "#FFFFFF", "background": "#F5913D", "ratio": 2.33, "classification": "decorative" },
+    { "foreground": "#FFFFFF", "background": "#FC4C4D", "ratio": 3.34, "classification": "limited" },
+    { "foreground": "#FFFFFF", "background": "#ED5B5B", "ratio": 3.36, "classification": "limited" },
+    { "foreground": "#0045F2", "background": "#A0C3FF", "ratio": 3.75, "classification": "limited" },
+    { "foreground": "#9CA3AF", "background": "#FFFFFF", "ratio": 2.54, "classification": "decorative" }
+  ]
+}
