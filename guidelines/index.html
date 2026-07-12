@@ -167,8 +167,19 @@
 
       <section id="contrast" class="guideline-section">
         <div class="section-title"><span>03</span><div><p>ACCESSIBLE COLOR</p><h2>色彩對比</h2></div></div>
-        <p class="section-lead">以下完整保留原始建議組合，但重新計算對比。AA Normal 代表一般文字達 4.5:1；Large/UI only 只可用於大字或 3:1 UI 邊界，不能標示成一般文字 AA。</p>
+        <p class="section-lead">實作時先選 Production semantic role，再查閱原始 palette。AA Normal 代表一般文字達 4.5:1；Large text 的 3:1 門檻只適用於至少 24px regular 或約 18.7px bold，UI 的 3:1 則只適用於辨識元件與狀態所必要的圖形。</p>
         <div class="contrast-legend"><span class="badge pass">AA Normal</span><span class="badge limited">Large / UI only</span><span class="badge legacy">Legacy mismatch</span></div>
+
+        <h3>Production semantic roles <small>實作優先使用</small></h3>
+        <div class="semantic-map">
+          <div class="semantic-head"><strong>Role</strong><strong>Light</strong><strong>Dark</strong></div>
+          <div><code>canvas</code><span><i style="--role:#F7F9FC"></i>#F7F9FC</span><span><i style="--role:#000000"></i>#000000</span></div>
+          <div><code>surfaceRaised</code><span><i style="--role:#FFFFFF"></i>#FFFFFF</span><span><i style="--role:#111111"></i>#111111</span></div>
+          <div><code>textPrimary</code><span><i style="--role:#17213F"></i>#17213F</span><span><i style="--role:#F5F7FF"></i>#F5F7FF</span></div>
+          <div><code>textSecondary</code><span><i style="--role:#4B5674"></i>#4B5674</span><span><i style="--role:#C5CEE0"></i>#C5CEE0</span></div>
+          <div><code>actionPrimary</code><span><i style="--role:#0045F2"></i>#0045F2</span><span><i style="--role:#1B41C5"></i>#1B41C5</span></div>
+          <div><code>actionOnPrimary</code><span><i style="--role:#FFFFFF"></i>#FFFFFF</span><span><i style="--role:#FFFFFF"></i>#FFFFFF</span></div>
+        </div>
 
         <h3>原始淺色模式配對</h3>
         <div class="contrast-grid">
@@ -228,7 +239,7 @@
         <div class="metric-grid"><div><strong>1440px</strong><span>原始頁面尺寸</span></div><div><strong>1200px</strong><span>內容最大寬度</span></div><div><strong>900px</strong><span>原始首屏高度</span></div><div><strong>60–100px</strong><span>導航高度</span></div><div><strong>&gt;80px</strong><span>頁腳高度</span></div><div><strong>44px</strong><span>最小點擊區</span></div></div>
         <h3>12 欄系統</h3>
         <p>由 12 欄與 11 個 gutter 組成，原始 gutter 為 24px。可組合成 1、2、3、4 欄內容。Production responsive adaptation 使用 mobile 4 欄、tablet 8 欄、desktop 12 欄。</p>
-        <div class="grid-demo" aria-label="12 欄格線"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+        <div class="grid-measure"><span>24px gutter · responsive 4 / 8 / 12 columns</span><div class="grid-demo" aria-label="響應式欄位格線"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div></div>
         <h3>佈局模式</h3>
         <div class="layout-patterns"><div class="layout-row one"><span>100%</span></div><div class="layout-row two"><span>50%</span><span>50%</span></div><div class="layout-row three"><span>33.3%</span><span>33.3%</span><span>33.3%</span></div><div class="layout-row four"><span>25%</span><span>25%</span><span>25%</span><span>25%</span></div></div>
       </section>
@@ -237,28 +248,31 @@
         <div class="section-title"><span>06</span><div><p>BUTTONS</p><h2>按鈕</h2></div></div>
         <div class="formula-grid"><div><strong>1.5× font size</strong><span>左右 padding</span></div><div><strong>1× font size</strong><span>上下 padding</span></div><div><strong>&gt;5px</strong><span>圖標與文字間距</span></div><div><strong>16–20px</strong><span>按鈕圖標尺寸</span></div></div>
         <h3>按鈕尺寸</h3>
-        <div class="button-size-row"><div><span>Small · 28–32px visual</span><button class="demo-button small">Small Button</button></div><div><span>Normal · 36–40px visual</span><button class="demo-button normal">Normal Button</button></div><div><span>Medium · 40–48px visual</span><button class="demo-button medium">Medium Button</button></div></div>
+        <div class="button-size-row"><div><span>Small · 32px visual</span><div class="hit-target"><span class="visual-button small">Small</span></div><small>44px hit area</small></div><div><span>Normal · 40px visual</span><div class="hit-target"><span class="visual-button normal">Normal</span></div><small>44px hit area</small></div><div><span>Medium · 48px visual</span><div class="hit-target medium"><span class="visual-button medium">Medium</span></div><small>48px hit area</small></div></div>
         <p class="guidance-note">原始 visual height 可以小於 44px，但真實互動 hit area 仍必須至少 44×44px。</p>
 
         <h3>按鈕狀態與變體</h3>
         <div class="state-mapping"><span>原始 Figma 狀態映射</span><code>Rest #0045F2</code><code>Hover #2462FF</code><code>Pressed #2455A8</code><code>Disabled #D1D5DB</code><p>這些值用於還原原始稿；production 元件應使用 action semantic tokens，以便 Light／Dark mode 正確切換。</p></div>
-        <div class="button-state-grid"><div class="state-head">狀態</div><div class="state-head">Normal</div><div class="state-head">Icon + Text</div><div class="state-head">Outline</div>
-          <div class="state-name">Rest</div><button class="demo-button normal">Button</button><button class="demo-button normal"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</button><button class="demo-button outline">Button</button>
-          <div class="state-name">Hover</div><button class="demo-button normal is-hover">Button</button><button class="demo-button normal is-hover"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</button><button class="demo-button outline is-hover">Button</button>
-          <div class="state-name">Pressed</div><button class="demo-button normal is-pressed">Button</button><button class="demo-button normal is-pressed"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</button><button class="demo-button outline is-pressed">Button</button>
-          <div class="state-name">Disabled</div><button class="demo-button normal" disabled>Button</button><button class="demo-button normal" disabled><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</button><button class="demo-button outline" disabled>Button</button>
-        </div>
+        <div class="button-state-scroll" tabindex="0" aria-label="按鈕狀態矩陣，可水平捲動"><div class="button-state-grid"><div class="state-head">狀態</div><div class="state-head">Normal</div><div class="state-head">Icon + Text</div><div class="state-head">Outline</div>
+          <div class="state-name">Rest</div><span class="demo-button normal">Button</span><span class="demo-button normal"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline">Button</span>
+          <div class="state-name">Hover</div><span class="demo-button normal is-hover">Button</span><span class="demo-button normal is-hover"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline is-hover">Button</span>
+          <div class="state-name">Pressed</div><span class="demo-button normal is-pressed">Button</span><span class="demo-button normal is-pressed"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline is-pressed">Button</span>
+          <div class="state-name">Focus</div><span class="demo-button normal is-focus">Button</span><span class="demo-button normal is-focus"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline is-focus">Button</span>
+          <div class="state-name">Loading</div><span class="demo-button normal is-loading"><span class="spinner" aria-hidden="true"></span>Button</span><span class="demo-button normal is-loading"><span class="spinner" aria-hidden="true"></span>Button</span><span class="demo-button outline is-loading"><span class="spinner" aria-hidden="true"></span>Button</span>
+          <div class="state-name">Disabled</div><span class="demo-button normal is-disabled">Button</span><span class="demo-button normal is-disabled"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline is-disabled">Button</span>
+        </div></div>
       </section>
 
       <section id="components" class="guideline-section">
         <div class="section-title"><span>07</span><div><p>COMPONENT FOUNDATIONS</p><h2>間距與圓角</h2></div></div>
         <h3>圓角半徑 <small>數值為原始參考</small></h3>
         <p>尺寸越大的組件使用越大的圓角。按鈕圓角原則上不超過高度的 1/4。嵌套時使用同心圓角：內層 radius = 外層 radius − padding。</p>
-        <div class="radius-grid"><div style="--r:20px"><span>20px</span><p>圓頭容器</p></div><div style="--r:16px"><span>16px</span><p>大組件</p></div><div style="--r:12px"><span>12px</span><p>卡片、小組件</p></div><div style="--r:8px"><span>8px</span><p>按鈕、輸入、小標籤</p></div></div>
+        <div class="radius-grid"><div style="--r:20px"><span class="radius-shape"></span><strong>20px</strong><p>圓頭容器</p></div><div style="--r:16px"><span class="radius-shape"></span><strong>16px</strong><p>大組件</p></div><div style="--r:12px"><span class="radius-shape"></span><strong>12px</strong><p>卡片、小組件</p></div><div style="--r:8px"><span class="radius-shape"></span><strong>8px</strong><p>按鈕、輸入、小標籤</p></div></div>
         <div class="concentric-demo"><div><div>外層 20px<br><span>padding 4px</span></div></div><p><strong>同心圓角</strong><br>外層 20px − padding 4px = 內層 16px</p></div>
 
         <h3>基本間距 <small>4px 倍數系統</small></h3>
-        <div class="spacing-list"><div><span style="--w:16px"></span><strong>8–16px</strong><p>小元素、按鍵、強相關文字</p></div><div><span style="--w:32px"></span><strong>24–32px</strong><p>小模塊、同組元素</p></div><div><span style="--w:64px"></span><strong>32–64px</strong><p>大模塊、頁面段落</p></div><div><span style="--w:96px"></span><strong>64–96px</strong><p>頁面與模塊分割</p></div></div>
+        <div class="spacing-scale" aria-label="4px 倍數間距階梯"><div style="--w:4px"><span></span><strong>4</strong><small>space-1</small></div><div style="--w:8px"><span></span><strong>8</strong><small>space-2</small></div><div style="--w:12px"><span></span><strong>12</strong><small>space-3</small></div><div style="--w:16px"><span></span><strong>16</strong><small>space-4</small></div><div style="--w:24px"><span></span><strong>24</strong><small>space-6</small></div><div style="--w:32px"><span></span><strong>32</strong><small>space-8</small></div><div style="--w:48px"><span></span><strong>48</strong><small>space-12</small></div><div style="--w:64px"><span></span><strong>64</strong><small>space-16</small></div><div style="--w:96px"><span></span><strong>96</strong><small>space-24</small></div></div>
+        <p class="guidance-note">選擇離散 token，不使用 28px、36px 等任意中間值。8–16px 用於緊密關係；24–32px 用於同組區塊；48–64px 用於章節；96px 用於大型頁面分隔。</p>
       </section>
 
       <section id="materials" class="guideline-section">

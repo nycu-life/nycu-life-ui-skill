@@ -43,7 +43,7 @@ const siteCssFiles = ['styles.css', 'guidelines.css'];
 const siteCss = (await Promise.all(siteCssFiles.map((file) => readFile(new URL(`../site/${file}`, import.meta.url), 'utf8')))).join('\n');
 const declaredVariables = new Set([...generatedCss.matchAll(/--([a-z0-9-]+)\s*:/g)].map((match) => match[1]));
 for (const match of siteCss.matchAll(/--([a-z0-9-]+)\s*:/g)) declaredVariables.add(match[1]);
-for (const localVariable of ['status', 'fg', 'bg', 'dot', 'r', 'w']) declaredVariables.add(localVariable);
+for (const localVariable of ['status', 'fg', 'bg', 'dot', 'r', 'w', 'role']) declaredVariables.add(localVariable);
 const usedVariables = new Set([...siteCss.matchAll(/var\(--([a-z0-9-]+)/g)].map((match) => match[1]));
 for (const variable of usedVariables) if (!declaredVariables.has(variable)) failures.push(`Site CSS uses undefined --${variable}.`);
 
