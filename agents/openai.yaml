@@ -1,4 +1,7 @@
 interface:
   display_name: "NYCU LIFE UI"
-  short_description: "Design tokens and style guidelines for NYCU LIFE frontend (WCAG 2.1 AA)"
-  default_prompt: "Apply NYCU LIFE UI style guidelines to the current component"
+  short_description: "Brand system and accessible campus UI guidance"
+  icon_small: "./assets/brand/mark-blue.svg"
+  icon_large: "./assets/brand/lockup-horizontal-blue.svg"
+  brand_color: "#0922E7"
+  default_prompt: "Use $nycu-life-ui to brand and review this interface for mobile, dark mode, and accessibility."

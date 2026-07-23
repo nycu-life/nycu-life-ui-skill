@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light" data-asset-prefix="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NYCU LIFE 完整 UI Guidelines：色彩、排版、格線、按鈕、間距、圓角、材質與圖標。">
+  <meta name="theme-color" content="#0922E7">
+  <title>NYCU LIFE — UI Guidelines</title>
+  <link rel="icon" href="../assets/brand/mark-blue.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0;24,400,1,0">
+  <link rel="stylesheet" href="../references/tokens.css">
+  <link rel="stylesheet" href="../site/styles.css">
+  <link rel="stylesheet" href="../site/guidelines.css">
+  <script src="../site/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#guidelines-main">跳至規範內容</a>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand-link" href="../" aria-label="返回 NYCU LIFE 品牌首頁">
+        <img src="../assets/brand/lockup-horizontal-blue.svg" alt="NYCU LIFE" data-brand-logo>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        <span class="sr-only">開啟導覽</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="文件導覽">
+        <a href="../#brand">品牌</a>
+        <a href="../#identity">識別</a>
+        <a href="./" aria-current="page">完整規範</a>
+        <a href="../#resources">資源</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-theme-toggle aria-label="切換深色模式" aria-pressed="false"><span class="theme-icon" aria-hidden="true">◐</span></button>
+        <a class="button button-primary header-cta" href="../#skill">取得 UI Skill</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="docs-shell">
+    <aside class="docs-sidebar" aria-label="章節目錄">
+      <p class="toc-label">UI GUIDELINES</p>
+      <nav class="docs-toc" data-nav>
+        <a href="#color-light"><span>01</span>淺色色彩</a>
+        <a href="#color-dark"><span>02</span>深色色彩</a>
+        <a href="#contrast"><span>03</span>色彩對比</a>
+        <a href="#typography"><span>04</span>文字排版</a>
+        <a href="#grid"><span>05</span>格線系統</a>
+        <a href="#buttons"><span>06</span>按鈕</a>
+        <a href="#components"><span>07</span>間距與圓角</a>
+        <a href="#materials"><span>08</span>陰影與材質</a>
+        <a href="#icons"><span>09</span>圖標</a>
+      </nav>
+      <div class="toc-meta"><span>v2.0</span><span>2026.07</span><span>WCAG 2.1 AA target</span></div>
+    </aside>
+
+    <main id="guidelines-main" class="docs-main">
+      <header class="docs-hero">
+        <p class="docs-kicker">NYCU LIFE DESIGN SYSTEM</p>
+        <h1>UI Style Guidelines</h1>
+        <p>完整保留原始九章規格，並將原始 palette、production semantic tokens 與無障礙配對清楚分層。原始色值可以作為設計參考，但只有標示為 AA Normal 的組合可直接用於一般文字。</p>
+        <div class="docs-hero-meta"><span>Noto Sans TC</span><span>Light + Dark</span><span>4px base grid</span><span>44px target</span></div>
+      </header>
+
+      <section id="color-light" class="guideline-section">
+        <div class="section-title"><span>01</span><div><p>COLOR / LIGHT</p><h2>淺色色彩</h2></div></div>
+        <p class="section-lead">保留原始 Figma palette 作為 primitive reference。文字與元件實作應優先使用 semantic tokens，不應直接把所有色票視為可互換的品牌色。</p>
+
+        <div class="palette-group"><h3>品牌色 <small>標題、主要操作、圖標與品牌區塊</small></h3><div class="swatch-grid">
+          <button class="swatch" style="--swatch:#0045F2" data-copy="#0045F2"><span>Primary</span><strong>#0045F2</strong></button>
+          <button class="swatch" style="--swatch:#2462FF" data-copy="#2462FF"><span>Secondary 1</span><strong>#2462FF</strong></button>
+          <button class="swatch" style="--swatch:#4D7FFF" data-copy="#4D7FFF"><span>Secondary 2</span><strong>#4D7FFF</strong></button>
+          <button class="swatch" style="--swatch:#CCDBFF" data-copy="#CCDBFF"><span>Secondary 3</span><strong>#CCDBFF</strong></button>
+          <button class="swatch" style="--swatch:#2455A8" data-copy="#2455A8"><span>Secondary 4</span><strong>#2455A8</strong></button>
+        </div></div>
+
+        <div class="palette-group"><h3>輔助色 — 綠 <small>只用於類別與狀態區分</small></h3><div class="swatch-grid">
+          <button class="swatch" style="--swatch:#80DA0A" data-copy="#80DA0A"><span>Primary</span><strong>#80DA0A</strong></button>
+          <button class="swatch" style="--swatch:#98E236" data-copy="#98E236"><span>Secondary 1</span><strong>#98E236</strong></button>
+          <button class="swatch" style="--swatch:#AFED5E" data-copy="#AFED5E"><span>Secondary 2</span><strong>#AFED5E</strong></button>
+          <button class="swatch" style="--swatch:#D5F1B1" data-copy="#D5F1B1"><span>Secondary 3</span><strong>#D5F1B1</strong></button>
+          <button class="swatch" style="--swatch:#EDF0F5" data-copy="#EDF0F5"><span>Secondary 4</span><strong>#EDF0F5</strong></button>
+        </div></div>
+
+        <div class="palette-group"><h3>輔助色 — 橘／金 <small>只用於類別與提醒</small></h3><div class="swatch-grid">
+          <button class="swatch" style="--swatch:#F2A500" data-copy="#F2A500"><span>Primary</span><strong>#F2A500</strong></button>
+          <button class="swatch" style="--swatch:#FFBA24" data-copy="#FFBA24"><span>Secondary 1</span><strong>#FFBA24</strong></button>
+          <button class="swatch" style="--swatch:#FFC64D" data-copy="#FFC64D"><span>Secondary 2</span><strong>#FFC64D</strong></button>
+          <button class="swatch" style="--swatch:#FFE5AD" data-copy="#FFE5AD"><span>Secondary 3</span><strong>#FFE5AD</strong></button>
+          <button class="swatch" style="--swatch:#6C4C08" data-copy="#6C4C08"><span>Secondary 4</span><strong>#6C4C08</strong></button>
+        </div></div>
+
+        <div class="palette-group"><h3>灰階色 <small>文字、背景、邊框與層級</small></h3><div class="swatch-grid neutral-grid">
+          <button class="swatch" style="--swatch:#000000" data-copy="#000000"><span>Black</span><strong>#000000</strong></button>
+          <button class="swatch" style="--swatch:#333333" data-copy="#333333"><span>Gray 1</span><strong>#333333</strong></button>
+          <button class="swatch" style="--swatch:#374151" data-copy="#374151"><span>Gray 2</span><strong>#374151</strong></button>
+          <button class="swatch" style="--swatch:#4B5563" data-copy="#4B5563"><span>Gray 3</span><strong>#4B5563</strong></button>
+          <button class="swatch" style="--swatch:#6B7280" data-copy="#6B7280"><span>Gray 4</span><strong>#6B7280</strong></button>
+          <button class="swatch" style="--swatch:#9CA3AF" data-copy="#9CA3AF"><span>Gray 5</span><strong>#9CA3AF</strong></button>
+          <button class="swatch" style="--swatch:#D1D5DB" data-copy="#D1D5DB"><span>Gray 6</span><strong>#D1D5DB</strong></button>
+          <button class="swatch" style="--swatch:#F3F4F6" data-copy="#F3F4F6"><span>Gray 7</span><strong>#F3F4F6</strong></button>
+          <button class="swatch" style="--swatch:#FFFFFF" data-copy="#FFFFFF"><span>White</span><strong>#FFFFFF</strong></button>
+        </div></div>
+
+        <div class="palette-group"><h3>狀態色</h3><div class="status-grid">
+          <div style="--status:#A0C3FF"><span>Info</span><strong>#A0C3FF</strong></div>
+          <div style="--status:#0FBD81"><span>Success</span><strong>#0FBD81</strong></div>
+          <div style="--status:#F5913D"><span>Warning</span><strong>#F5913D</strong></div>
+          <div style="--status:#FC4C4D"><span>Error</span><strong>#FC4C4D</strong></div>
+        </div><p class="guidance-note">這些是 primitive 狀態色，不代表可以直接搭配白字。Production UI 請使用已驗證的 <code>info/success/warning/danger</code> surface + text semantic pairs。</p></div>
+      </section>
+
+      <section id="color-dark" class="guideline-section dark-reference">
+        <div class="section-title"><span>02</span><div><p>COLOR / DARK</p><h2>深色色彩</h2></div></div>
+        <p class="section-lead">原始深色 palette 透過降低飽和度與調整明度建立舒適視覺。Production dark mode 仍應透過 semantic role 映射，而不是直接反轉 primitive palette。</p>
+
+        <div class="palette-group"><h3>品牌色</h3><div class="swatch-grid">
+          <button class="swatch" style="--swatch:#2F60DA" data-copy="#2F60DA"><span>Primary</span><strong>#2F60DA</strong></button>
+          <button class="swatch" style="--swatch:#527AE0" data-copy="#527AE0"><span>Secondary 1</span><strong>#527AE0</strong></button>
+          <button class="swatch" style="--swatch:#BECDF4" data-copy="#BECDF4"><span>Secondary 2</span><strong>#BECDF4</strong></button>
+          <button class="swatch" style="--swatch:#D9E3FC" data-copy="#D9E3FC"><span>Secondary 3</span><strong>#D9E3FC</strong></button>
+          <button class="swatch" style="--swatch:#EDF0F5" data-copy="#EDF0F5"><span>Secondary 4</span><strong>#EDF0F5</strong></button>
+        </div></div>
+
+        <div class="palette-group"><h3>輔助色 — 綠</h3><div class="swatch-grid">
+          <button class="swatch" style="--swatch:#8BD22D" data-copy="#8BD22D"><span>Primary</span><strong>#8BD22D</strong></button>
+          <button class="swatch" style="--swatch:#A3E052" data-copy="#A3E052"><span>Secondary 1</span><strong>#A3E052</strong></button>
+          <button class="swatch" style="--swatch:#D1F0A8" data-copy="#D1F0A8"><span>Secondary 2</span><strong>#D1F0A8</strong></button>
+          <button class="swatch" style="--swatch:#E3F6CB" data-copy="#E3F6CB"><span>Secondary 3</span><strong>#E3F6CB</strong></button>
+          <button class="swatch" style="--swatch:#EDF0F5" data-copy="#EDF0F5"><span>Secondary 4</span><strong>#EDF0F5</strong></button>
+        </div></div>
+
+        <div class="palette-group"><h3>輔助色 — 橘／金</h3><div class="swatch-grid">
+          <button class="swatch" style="--swatch:#E0A629" data-copy="#E0A629"><span>Primary</span><strong>#E0A629</strong></button>
+          <button class="swatch" style="--swatch:#E5B54D" data-copy="#E5B54D"><span>Secondary 1</span><strong>#E5B54D</strong></button>
+          <button class="swatch" style="--swatch:#F5DBA3" data-copy="#F5DBA3"><span>Secondary 2</span><strong>#F5DBA3</strong></button>
+          <button class="swatch" style="--swatch:#F7ECD4" data-copy="#F7ECD4"><span>Secondary 3</span><strong>#F7ECD4</strong></button>
+          <button class="swatch" style="--swatch:#FFF7E5" data-copy="#FFF7E5"><span>Secondary 4</span><strong>#FFF7E5</strong></button>
+        </div></div>
+
+        <div class="palette-group"><h3>灰階色 <small>沿用同一組 primitive，依角色反轉用途</small></h3><div class="swatch-grid neutral-grid">
+          <button class="swatch" style="--swatch:#000000" data-copy="#000000"><span>Black</span><strong>#000000</strong></button>
+          <button class="swatch" style="--swatch:#333333" data-copy="#333333"><span>Gray 1</span><strong>#333333</strong></button>
+          <button class="swatch" style="--swatch:#374151" data-copy="#374151"><span>Gray 2</span><strong>#374151</strong></button>
+          <button class="swatch" style="--swatch:#4B5563" data-copy="#4B5563"><span>Gray 3</span><strong>#4B5563</strong></button>
+          <button class="swatch" style="--swatch:#6B7280" data-copy="#6B7280"><span>Gray 4</span><strong>#6B7280</strong></button>
+          <button class="swatch" style="--swatch:#9CA3AF" data-copy="#9CA3AF"><span>Gray 5</span><strong>#9CA3AF</strong></button>
+          <button class="swatch" style="--swatch:#D1D5DB" data-copy="#D1D5DB"><span>Gray 6</span><strong>#D1D5DB</strong></button>
+          <button class="swatch" style="--swatch:#F3F4F6" data-copy="#F3F4F6"><span>Gray 7</span><strong>#F3F4F6</strong></button>
+          <button class="swatch" style="--swatch:#FFFFFF" data-copy="#FFFFFF"><span>White</span><strong>#FFFFFF</strong></button>
+        </div></div>
+
+        <div class="palette-group"><h3>狀態色（深色）</h3><div class="status-grid">
+          <div style="--status:#A9C5F5"><span>Info</span><strong>#A9C5F5</strong></div>
+          <div style="--status:#11D491"><span>Success</span><strong>#11D491</strong></div>
+          <div style="--status:#E9A063"><span>Warning</span><strong>#E9A063</strong></div>
+          <div style="--status:#ED5B5B"><span>Error</span><strong>#ED5B5B</strong></div>
+        </div></div>
+      </section>
+
+      <section id="contrast" class="guideline-section">
+        <div class="section-title"><span>03</span><div><p>ACCESSIBLE COLOR</p><h2>色彩對比</h2></div></div>
+        <p class="section-lead">實作時先選 Production semantic role，再查閱原始 palette。AA Normal 代表一般文字達 4.5:1；Large text 的 3:1 門檻只適用於至少 24px regular 或約 18.7px bold，UI 的 3:1 則只適用於辨識元件與狀態所必要的圖形。</p>
+        <div class="contrast-legend"><span class="badge pass">AA Normal</span><span class="badge limited">Large / UI only</span><span class="badge legacy">Legacy mismatch</span></div>
+
+        <h3>Production semantic roles <small>實作優先使用</small></h3>
+        <div class="semantic-map">
+          <div class="semantic-head"><strong>Role</strong><strong>Light</strong><strong>Dark</strong></div>
+          <div><code>canvas</code><span><i style="--role:#F7F9FC"></i>#F7F9FC</span><span><i style="--role:#000000"></i>#000000</span></div>
+          <div><code>surfaceRaised</code><span><i style="--role:#FFFFFF"></i>#FFFFFF</span><span><i style="--role:#111111"></i>#111111</span></div>
+          <div><code>textPrimary</code><span><i style="--role:#17213F"></i>#17213F</span><span><i style="--role:#F5F7FF"></i>#F5F7FF</span></div>
+          <div><code>textSecondary</code><span><i style="--role:#4B5674"></i>#4B5674</span><span><i style="--role:#C5CEE0"></i>#C5CEE0</span></div>
+          <div><code>actionPrimary</code><span><i style="--role:#0045F2"></i>#0045F2</span><span><i style="--role:#1B41C5"></i>#1B41C5</span></div>
+          <div><code>actionOnPrimary</code><span><i style="--role:#FFFFFF"></i>#FFFFFF</span><span><i style="--role:#FFFFFF"></i>#FFFFFF</span></div>
+        </div>
+
+        <h3>原始淺色模式配對</h3>
+        <div class="contrast-grid">
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#0045F2;--fg:#FFFFFF">Aa</div><div><strong>#FFFFFF on #0045F2</strong><span>6.70:1</span><em class="badge pass">AA Normal</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#4D7FFF;--fg:#FFFFFF">Aa</div><div><strong>#FFFFFF on #4D7FFF</strong><span>3.62:1</span><em class="badge limited">Large / UI only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#CCDBFF;--fg:#2462FF">Aa</div><div><strong>#2462FF on #CCDBFF</strong><span>3.55:1</span><em class="badge limited">Large / UI only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#CCDBFF;--fg:#2455A8">Aa</div><div><strong>#2455A8 on #CCDBFF</strong><span>5.15:1</span><em class="badge pass">AA Normal</em></div></div>
+        </div>
+
+        <h3>原始深色模式配對</h3>
+        <div class="contrast-grid">
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#E5EBFA;--fg:#2F60DA">Aa</div><div><strong>#2F60DA on #E5EBFA</strong><span>4.62:1</span><em class="badge legacy">AA，但背景不在原 palette</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#2F60DA;--fg:#BECDF4">Aa</div><div><strong>#BECDF4 on #2F60DA</strong><span>3.48:1</span><em class="badge limited">Large / UI only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#527AE0;--fg:#EDF0F5">Aa</div><div><strong>#EDF0F5 on #527AE0</strong><span>3.52:1</span><em class="badge limited">Large / UI only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#2F60DA;--fg:#D9E3FC">Aa</div><div><strong>#D9E3FC on #2F60DA</strong><span>4.29:1</span><em class="badge limited">Large / UI only</em></div></div>
+        </div>
+
+        <h3>容易誤用的組合</h3>
+        <p>這些配色常看起來鮮明，但不能直接當作一般內文。低於 3:1 的組合只可作裝飾；3–4.49:1 僅限大字或有明確尺寸條件的 UI 圖形。</p>
+        <div class="contrast-grid">
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#0FBD81;--fg:#FFFFFF">Aa</div><div><strong>#FFFFFF on #0FBD81</strong><span>2.44:1</span><em class="badge legacy">Decorative only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#F5913D;--fg:#FFFFFF">Aa</div><div><strong>#FFFFFF on #F5913D</strong><span>2.33:1</span><em class="badge legacy">Decorative only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#FC4C4D;--fg:#FFFFFF">Aa</div><div><strong>#FFFFFF on #FC4C4D</strong><span>3.34:1</span><em class="badge limited">Large / UI only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#ED5B5B;--fg:#FFFFFF">Aa</div><div><strong>#FFFFFF on #ED5B5B</strong><span>3.36:1</span><em class="badge limited">Large / UI only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#A0C3FF;--fg:#0045F2">Aa</div><div><strong>#0045F2 on #A0C3FF</strong><span>3.75:1</span><em class="badge limited">Large / UI only</em></div></div>
+          <div class="contrast-card"><div class="contrast-preview" style="--bg:#FFFFFF;--fg:#9CA3AF">Aa</div><div><strong>#9CA3AF on #FFFFFF</strong><span>2.54:1</span><em class="badge legacy">Decorative only</em></div></div>
+        </div>
+
+        <div class="production-callout"><div><span class="material-symbols-rounded" aria-hidden="true">verified</span></div><div><h3>Production 規則</h3><p>一般文字只使用 canonical <code>tokens.json</code> 中通過 4.5:1 的 semantic pairs。綠、橘與狀態 primitive 不直接搭配白字；使用對應的 surface/text token。自動檢查由 <code>npm run check</code> 執行。</p></div></div>
+      </section>
+
+      <section id="typography" class="guideline-section">
+        <div class="section-title"><span>04</span><div><p>TYPOGRAPHY</p><h2>文字排版</h2></div></div>
+        <p class="section-lead">網站與 UI 以 Noto Sans TC 為第一順位，使用 400、500、600、700。原始 H1–H6 尺寸保留作為歷史基準；production code 將視覺 role 與 HTML heading semantics 分開。</p>
+        <div class="type-principles"><div><strong>1.2–1.5</strong><span>原始行高範圍</span></div><div><strong>1.75</strong><span>Production 正文行高</span></div><div><strong>28–40 字</strong><span>繁中建議行長</span></div><div><strong>2–2.5×</strong><span>原始段間距建議</span></div></div>
+
+        <h3>原始排版層級</h3>
+        <div class="platform-fonts"><div><span>Apple 平台</span><strong>PingFang TC + SF Pro</strong><p>繁中文字體搭配系統西文字體。</p></div><div><span>跨平台參考</span><strong>Source Han Sans TC + Roboto</strong><p>原始設計系統的 Android／Web 字體組合。</p></div><div><span>Production Web</span><strong>Noto Sans TC + system-ui</strong><p>目前品牌網站與產品介面的統一選擇。</p></div></div>
+        <div class="table-wrap" tabindex="0" aria-label="原始排版層級，可水平捲動"><table><thead><tr><th>層級</th><th>用途</th><th>字重</th><th>字號</th></tr></thead><tbody>
+          <tr><td><code>H1</code></td><td class="type-h1">頁面主標題</td><td>Bold 700</td><td>36px</td></tr>
+          <tr><td><code>H2</code></td><td class="type-h2">模塊標題</td><td>Semibold 600</td><td>28px</td></tr>
+          <tr><td><code>H3</code></td><td class="type-h3">小標題／內容子標題</td><td>Medium 500</td><td>20–24px</td></tr>
+          <tr><td><code>H4</code></td><td>正文</td><td>Regular 400</td><td>16px</td></tr>
+          <tr><td><code>H5</code></td><td class="type-aux">輔助與說明文字</td><td>Regular 400</td><td>14px</td></tr>
+          <tr><td><code>H6</code></td><td class="type-small">標籤／版權／最小字號</td><td>Regular 400</td><td>12px</td></tr>
+        </tbody></table></div>
+
+        <h3>Production 視覺角色</h3>
+        <div class="role-list"><div><span>Display</span><strong>42–76px / 700</strong><p>短版品牌 hero，不用來代表 HTML H1。</p></div><div><span>Title</span><strong>30–48px / 700</strong><p>頁面與主要章節標題。</p></div><div><span>Heading</span><strong>20–30px / 600</strong><p>卡片群組與功能標題。</p></div><div><span>Body</span><strong>16px / 400</strong><p>正文，line-height 1.75。</p></div><div><span>Small</span><strong>14px / 400–500</strong><p>輔助內容，不低於可讀對比。</p></div></div>
+
+        <h3>文字顏色</h3>
+        <div class="text-color-grid"><div><span class="color-dot" style="--dot:#333333"></span><strong>Legacy Gray 1 #333333</strong><p>原始正文與標題基準。</p></div><div><span class="color-dot" style="--dot:#9CA3AF"></span><strong>Legacy Gray 5 #9CA3AF</strong><p>在白底不達一般文字 AA，只限裝飾、停用或另行驗證。</p></div><div><span class="color-dot" style="--dot:#4B5674"></span><strong>Semantic textSecondary #4B5674</strong><p>Production 輔助文字的可讀替代。</p></div></div>
+      </section>
+
+      <section id="grid" class="guideline-section">
+        <div class="section-title"><span>05</span><div><p>LAYOUT</p><h2>格線系統</h2></div></div>
+        <div class="metric-grid"><div><strong>1440px</strong><span>原始頁面尺寸</span></div><div><strong>1200px</strong><span>內容最大寬度</span></div><div><strong>900px</strong><span>原始首屏高度</span></div><div><strong>60–100px</strong><span>導航高度</span></div><div><strong>&gt;80px</strong><span>頁腳高度</span></div><div><strong>44px</strong><span>最小點擊區</span></div></div>
+        <h3>12 欄系統</h3>
+        <p>由 12 欄與 11 個 gutter 組成，原始 gutter 為 24px。可組合成 1、2、3、4 欄內容。Production responsive adaptation 使用 mobile 4 欄、tablet 8 欄、desktop 12 欄。</p>
+        <div class="grid-measure"><span>24px gutter · responsive 4 / 8 / 12 columns</span><div class="grid-demo" aria-label="響應式欄位格線"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div></div>
+        <h3>佈局模式</h3>
+        <div class="layout-patterns"><div class="layout-row one"><span>100%</span></div><div class="layout-row two"><span>50%</span><span>50%</span></div><div class="layout-row three"><span>33.3%</span><span>33.3%</span><span>33.3%</span></div><div class="layout-row four"><span>25%</span><span>25%</span><span>25%</span><span>25%</span></div></div>
+      </section>
+
+      <section id="buttons" class="guideline-section">
+        <div class="section-title"><span>06</span><div><p>BUTTONS</p><h2>按鈕</h2></div></div>
+        <div class="formula-grid"><div><strong>1.5× font size</strong><span>左右 padding</span></div><div><strong>1× font size</strong><span>上下 padding</span></div><div><strong>&gt;5px</strong><span>圖標與文字間距</span></div><div><strong>16–20px</strong><span>按鈕圖標尺寸</span></div></div>
+        <h3>按鈕尺寸</h3>
+        <div class="button-size-row"><div><span>Small · 32px visual</span><div class="hit-target"><span class="visual-button small">Small</span></div><small>44px hit area</small></div><div><span>Normal · 40px visual</span><div class="hit-target"><span class="visual-button normal">Normal</span></div><small>44px hit area</small></div><div><span>Medium · 48px visual</span><div class="hit-target medium"><span class="visual-button medium">Medium</span></div><small>48px hit area</small></div></div>
+        <p class="guidance-note">原始 visual height 可以小於 44px，但真實互動 hit area 仍必須至少 44×44px。</p>
+
+        <h3>按鈕狀態與變體</h3>
+        <div class="state-mapping"><span>原始 Figma 狀態映射</span><code>Rest #0045F2</code><code>Hover #2462FF</code><code>Pressed #2455A8</code><code>Disabled #D1D5DB</code><p>這些值用於還原原始稿；production 元件應使用 action semantic tokens，以便 Light／Dark mode 正確切換。</p></div>
+        <div class="button-state-scroll" tabindex="0" aria-label="按鈕狀態矩陣，可水平捲動"><div class="button-state-grid"><div class="state-head">狀態</div><div class="state-head">Normal</div><div class="state-head">Icon + Text</div><div class="state-head">Outline</div>
+          <div class="state-name">Rest</div><span class="demo-button normal">Button</span><span class="demo-button normal"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline">Button</span>
+          <div class="state-name">Hover</div><span class="demo-button normal is-hover">Button</span><span class="demo-button normal is-hover"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline is-hover">Button</span>
+          <div class="state-name">Pressed</div><span class="demo-button normal is-pressed">Button</span><span class="demo-button normal is-pressed"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline is-pressed">Button</span>
+          <div class="state-name">Focus</div><span class="demo-button normal is-focus">Button</span><span class="demo-button normal is-focus"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline is-focus">Button</span>
+          <div class="state-name">Loading</div><span class="demo-button normal is-loading"><span class="spinner" aria-hidden="true"></span>Button</span><span class="demo-button normal is-loading"><span class="spinner" aria-hidden="true"></span>Button</span><span class="demo-button outline is-loading"><span class="spinner" aria-hidden="true"></span>Button</span>
+          <div class="state-name">Disabled</div><span class="demo-button normal is-disabled">Button</span><span class="demo-button normal is-disabled"><span class="material-symbols-rounded" aria-hidden="true">edit</span>Button</span><span class="demo-button outline is-disabled">Button</span>
+        </div></div>
+      </section>
+
+      <section id="components" class="guideline-section">
+        <div class="section-title"><span>07</span><div><p>COMPONENT FOUNDATIONS</p><h2>間距與圓角</h2></div></div>
+        <h3>圓角半徑 <small>數值為原始參考</small></h3>
+        <p>尺寸越大的組件使用越大的圓角。按鈕圓角原則上不超過高度的 1/4。嵌套時使用同心圓角：內層 radius = 外層 radius − padding。</p>
+        <div class="radius-grid"><div style="--r:20px"><span class="radius-shape"></span><strong>20px</strong><p>圓頭容器</p></div><div style="--r:16px"><span class="radius-shape"></span><strong>16px</strong><p>大組件</p></div><div style="--r:12px"><span class="radius-shape"></span><strong>12px</strong><p>卡片、小組件</p></div><div style="--r:8px"><span class="radius-shape"></span><strong>8px</strong><p>按鈕、輸入、小標籤</p></div></div>
+        <div class="concentric-demo"><div><div>外層 20px<br><span>padding 4px</span></div></div><p><strong>同心圓角</strong><br>外層 20px − padding 4px = 內層 16px</p></div>
+
+        <h3>基本間距 <small>4px 倍數系統</small></h3>
+        <div class="spacing-scale" aria-label="4px 倍數間距階梯"><div style="--w:4px"><span></span><strong>4</strong><small>space-1</small></div><div style="--w:8px"><span></span><strong>8</strong><small>space-2</small></div><div style="--w:12px"><span></span><strong>12</strong><small>space-3</small></div><div style="--w:16px"><span></span><strong>16</strong><small>space-4</small></div><div style="--w:24px"><span></span><strong>24</strong><small>space-6</small></div><div style="--w:32px"><span></span><strong>32</strong><small>space-8</small></div><div style="--w:48px"><span></span><strong>48</strong><small>space-12</small></div><div style="--w:64px"><span></span><strong>64</strong><small>space-16</small></div><div style="--w:96px"><span></span><strong>96</strong><small>space-24</small></div></div>
+        <p class="guidance-note">選擇離散 token，不使用 28px、36px 等任意中間值。8–16px 用於緊密關係；24–32px 用於同組區塊；48–64px 用於章節；96px 用於大型頁面分隔。</p>
+      </section>
+
+      <section id="materials" class="guideline-section">
+        <div class="section-title"><span>08</span><div><p>ELEVATION</p><h2>陰影與材質</h2></div></div>
+        <p class="section-lead">不使用純黑陰影。保持柔和、低對比，讓層級清楚而不是讓卡片漂浮。材質效果只能小面積使用，且不得降低文字對比。</p>
+        <div class="shadow-spec"><div class="shadow-sample">Card shadow</div><div><code>0 12px 32px rgba(55, 65, 81, 0.10)</code><dl><div><dt>Color</dt><dd>#374151</dd></div><div><dt>X / Y</dt><dd>0 / 12</dd></div><div><dt>Opacity</dt><dd>10%</dd></div><div><dt>Blur</dt><dd>32px</dd></div></dl></div></div>
+        <h3>材質效果</h3>
+        <div class="material-demo"><div class="material-bg"><div class="glass frosted"><strong>毛玻璃</strong><span>Frosted glass</span></div><div class="glass liquid"><strong>液態玻璃</strong><span>Liquid glass</span></div></div><p>材質層只承載短標籤或裝飾。長文必須回到高對比 solid surface。</p></div>
+      </section>
+
+      <section id="icons" class="guideline-section">
+        <div class="section-title"><span>09</span><div><p>ICONOGRAPHY</p><h2>圖標</h2></div></div>
+        <p class="section-lead">使用 Google Material Symbols Rounded。選擇圓潤、有圓角的圖標，不使用過於尖銳的造型；圖標 weight 應與相鄰文字粗細接近。</p>
+        <div class="icon-spec-grid"><div><strong>24px</strong><span>預設高寬</span></div><div><strong>2px</strong><span>原始 margin／視覺 stroke</span></div><div><strong>400</strong><span>預設 weight · Grade Normal</span></div><div><strong>24dp</strong><span>Optical size</span></div></div>
+        <h3>Outlined（預設）</h3>
+        <div class="icon-row"><div><span class="material-symbols-rounded">alarm</span><small>alarm</small></div><div><span class="material-symbols-rounded">bedtime</span><small>bedtime</small></div><div><span class="material-symbols-rounded">favorite</span><small>favorite</small></div><div><span class="material-symbols-rounded">cottage</span><small>cottage</small></div><div><span class="material-symbols-rounded">add_reaction</span><small>add_reaction</small></div><div><span class="material-symbols-rounded">policy</span><small>policy</small></div></div>
+        <h3>Filled</h3>
+        <div class="icon-row filled"><div><span class="material-symbols-rounded">alarm</span><small>alarm</small></div><div><span class="material-symbols-rounded">bedtime</span><small>bedtime</small></div><div><span class="material-symbols-rounded">favorite</span><small>favorite</small></div><div><span class="material-symbols-rounded">cottage</span><small>cottage</small></div><div><span class="material-symbols-rounded">add_reaction</span><small>add_reaction</small></div><div><span class="material-symbols-rounded">policy</span><small>policy</small></div></div>
+        <h3>推薦尺寸</h3>
+        <div class="icon-size-row"><span style="font-size:16px">home</span><span style="font-size:24px">home</span><span style="font-size:32px">home</span><span style="font-size:48px">home</span><span style="font-size:64px">home</span></div>
+        <a class="external-resource" href="https://fonts.google.com/icons?icon.set=Material+Symbols&amp;icon.style=Rounded" target="_blank" rel="noopener noreferrer"><span class="material-symbols-rounded" aria-hidden="true">open_in_new</span>Google Material Symbols Rounded<span class="sr-only">（另開新分頁）</span></a>
+      </section>
+
+      <p class="copy-status" aria-live="polite" data-copy-status>點選色票即可複製色碼。</p>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="../assets/brand/lockup-horizontal-blue.svg" alt="NYCU LIFE" data-footer-logo>
+      <p>把校園生活，整理成一個好入口。</p>
+      <div class="footer-meta"><span>UI Guidelines v2.0</span><span>Accessibility target · WCAG 2.1 AA</span><span>© <span data-year></span> NYCU LIFE</span></div>
+    </div>
+  </footer>
+</body>
+</html>

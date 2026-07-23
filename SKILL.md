@@ -1,168 +1,68 @@
 ---
 name: nycu-life-ui
-description: NYCU LIFE UI Style Guidelines for frontend development. Use when building, styling, or reviewing UI components for the NYCU LIFE project. Enforces design tokens (colors, typography, spacing, shadows) and WCAG 2.1 AA accessibility standards from the official Figma design system.
+description: Build, restyle, or review NYCU LIFE websites, apps, UI components, brand pages, and presentation-aligned digital experiences. Use when a task involves NYCU LIFE branding, official fox logos, design tokens, responsive layouts, dark mode, campus product patterns, accessibility, Figma handoff, or consistency with the NYCU LIFE brand and Canva presentation system.
 ---
 
-# NYCU LIFE UI Style Guidelines
+# NYCU LIFE UI
 
-Official design system for NYCU LIFE frontend. All tokens and rules derive from the Figma source of truth.
+Create warm, clear, connected campus experiences with the official NYCU LIFE identity. Treat this skill as a workflow, not a color palette.
 
-**Standard:** WCAG 2.1 AA | **Version:** v1.0 (2026.02.14)
+## Work in this order
 
-**Figma:** https://www.figma.com/design/eshYmSn9jeEEti38tO1GGU/NYCU-LIFE-UI-Style-Guidelines?node-id=2635-102&m=dev
+1. Identify the surface, audience, primary task, states, and delivery framework.
+2. Read only the references required for the task:
+   - Brand story, tone, color roles, or typography: [references/brand-foundations.md](references/brand-foundations.md)
+   - Logo selection, background treatment, sizing, or downloads: [references/logo-usage.md](references/logo-usage.md)
+   - Tokens and implementation formats: [references/design-tokens.md](references/design-tokens.md)
+   - Original nine-chapter palette, type, grid, button, spacing, radius, shadow, material, or icon specifications: [references/original-ui-guidelines.md](references/original-ui-guidelines.md)
+   - Components, campus patterns, responsive behavior, or motion: [references/component-patterns.md](references/component-patterns.md)
+   - Contrast, keyboard, focus, forms, or review work: [references/accessibility.md](references/accessibility.md)
+   - Slides or Canva-aligned visual work: [references/presentation-guidelines.md](references/presentation-guidelines.md)
+   - Figma node lookup: [references/figma-nodes.md](references/figma-nodes.md)
+3. Use semantic tokens before primitive colors. Import generated artifacts instead of copying values by hand.
+4. Select an official logo from [assets/brand/manifest.json](assets/brand/manifest.json). Never redraw it or recolor the source paths.
+5. Build mobile-first behavior and complete every relevant state: rest, hover, pressed, focus-visible, disabled, loading, empty, error, and success.
+6. Verify the result against the checklist below before delivery.
 
-## When to Use
+## Non-negotiable brand decisions
 
-- Building any NYCU LIFE frontend page or component
-- Choosing colors, font sizes, spacing, or border radius
-- Reviewing UI code for design consistency
-- Setting up CSS variables or design tokens in a new project
+- Preserve official Logo Blue `#0922E7` for brand marks.
+- Use Action Blue `#0045F2` for primary light-theme controls; do not replace Logo Blue with it inside logo files.
+- Use green and orange for category distinction or focused emphasis, not general decoration.
+- Prefer clear hierarchy, generous whitespace, rounded geometry, and direct language.
+- Use the fox/book/C-tail/pencil story only when it helps users understand the identity; do not turn the mark into an unapproved mascot illustration.
+- Use official SVG assets for web and product work. Use white logos only on sufficiently dark, uncluttered backgrounds.
 
-## Quick Reference
+## Implementation sources
 
-### Colors
+Treat [references/tokens.json](references/tokens.json) as the canonical token source.
 
-Full token list with dark mode: [references/design-tokens.md](references/design-tokens.md)
+Treat [references/legacy-figma-palette.json](references/legacy-figma-palette.json) only as an original-design reference. If an original pairing conflicts with accessibility, use the accessible semantic token and document the adaptation.
 
-#### Light Mode
+- CSS: import [references/tokens.css](references/tokens.css)
+- TypeScript: import [references/tokens.ts](references/tokens.ts)
+- Tailwind: extend with [references/tailwind-preset.js](references/tailwind-preset.js)
+- Website and brand assets: use [assets/brand/](assets/brand/)
 
-**Brand (blue)** — titles, buttons, icons, cards: Primary `#0045F2` | Secondary 1 `#2462FF` | Secondary 2 `#4D7FFF` | Secondary 3 `#CCDBFF` | Secondary 4 `#2455A8`
+Do not add a second handwritten token set. If a project needs an alias, map it to a semantic token and document the exception.
 
-**Accent Green** — category distinction: Primary `#80DA0A` | Secondary 1 `#98E236` | Secondary 2 `#AFED5E` | Secondary 3 `#D5F1B1` | Secondary 4 `#EDF0F5`
+## Design defaults
 
-**Accent Orange** — category distinction: Primary `#F2A500` | Secondary 1 `#FFBA24` | Secondary 2 `#FFC64D` | Secondary 3 `#FFE5AD` | Secondary 4 `#6C4C08`
+- Build with a 4px spacing base and responsive composition, not fixed desktop canvases.
+- Use `surface`, `text`, `border`, `action`, `focus`, `category`, `info`, `success`, `warning`, `danger`, and disabled semantic roles.
+- Keep interaction targets at least 44 by 44 CSS pixels, even when the visible control is smaller.
+- Use Noto Sans TC as the primary website and UI typeface, with system sans-serif and PingFang TC fallbacks. Reserve alternative display faces for separately approved campaign work.
+- Keep motion between 140–220ms for ordinary feedback and respect `prefers-reduced-motion`.
+- Separate visual type roles from HTML heading levels. Preserve a logical heading outline.
 
-**Neutrals** — text (darker = more important), backgrounds, borders: Black `#000000` | Gray 1 `#333333` | Gray 2 `#374151` | Gray 3 `#4B5563` | Gray 4 `#6B7280` | Gray 5 `#9CA3AF` | Gray 6 `#D1D5DB` | Gray 7 `#F3F4F6` | White `#FFFFFF`
+## Delivery checklist
 
-**State:** Info `#A0C3FF` | Success `#0FBD81` | Warning `#F5913D` | Error `#FC4C4D`
+- Use an official logo variant appropriate to the background and available width.
+- Use canonical semantic tokens in both light and dark themes.
+- Keep normal text contrast at 4.5:1 or better and large text/UI boundaries at 3:1 or better.
+- Provide keyboard operation, visible focus, native disabled semantics, and accessible status announcements.
+- Verify 320, 375, 768, 1024, and 1440px widths without horizontal overflow.
+- Handle long Traditional Chinese text, English labels, 200% zoom, and reduced motion.
+- Explain any intentional deviation from the system in the handoff.
 
-#### Dark Mode
-
-Reduce saturation, increase brightness for comfort. Full values in [references/design-tokens.md](references/design-tokens.md).
-
-**Brand (blue):** Primary `#2F60DA` | Secondary 1 `#527AE0` | Secondary 2 `#BECDF4` | Secondary 3 `#D9E3FC` | Secondary 4 `#EDF0F5`
-
-**Accent Green:** Primary `#8BD22D` | Secondary 1 `#A3E052` | Secondary 2 `#D1F0A8` | Secondary 3 `#E3F6CB` | Secondary 4 `#EDF0F5`
-
-**Accent Orange:** Primary `#E0A629` | Secondary 1 `#E5B54D` | Secondary 2 `#F5DBA3` | Secondary 3 `#F7ECD4` | Secondary 4 `#FFF7E5`
-
-**Neutrals** — text, backgrounds, borders/stroke (描邊色): same gray scale as light mode (Black `#000000` → White `#FFFFFF`). In dark mode, lighter grays for text, darker grays for backgrounds.
-
-**State:** Info `#A9C5F5` | Success `#11D491` | Warning `#E9A063` | Error `#ED5B5B`
-
-#### WCAG Contrast Pairings
-
-Light: `#0045F2` on `#FFFFFF` | `#4D7FFF` on `#FFFFFF` | `#2462FF` on `#CCDBFF` | `#2455A8` on `#CCDBFF`
-
-Dark: `#2F60DA` on `#E5EBFA` | `#BECDF4` on `#2F60DA` | `#EDF0F5` on `#527AE0` | `#D9E3FC` on `#2F60DA`
-
-### Typography
-
-System fonts: PingFang + SF Pro (Apple) / Source Han Sans + Roboto (Windows/Android).
-
-| Level | Weight | Size | Usage |
-|-------|--------|------|-------|
-| H1 | Bold | 36px | Page title |
-| H2 | Semibold | 28px | Section title |
-| H3 | Medium | 20-24px | Subsection / content title |
-| H4 (body) | Regular | 16px | Body text |
-| H5 | Regular | 14px | Auxiliary / description |
-| H6 | Regular | 12px | Label / copyright / smallest |
-
-- **Line height:** 1.2x - 1.5x font size
-- **Paragraph spacing:** 2x - 2.5x font size
-- **Body text color:** `#333333` to `#666666` by hierarchy. Avoid pure black.
-- **Auxiliary text:** `#9CA3AF` (Gray 5)
-
-### Spacing (4px base system)
-
-| Range | Usage |
-|-------|-------|
-| 8-16px | Small elements, related text, buttons |
-| 24-32px | Small modules, grouped elements |
-| 32-64px | Large modules, page sections |
-| 64-96px | Page-to-module separation |
-
-### Border Radius
-
-Larger components use larger radius. Never exceed 1/4 of element height.
-
-**Concentric corners (同心圓角):** when nesting elements, inner radius = outer radius - padding. This ensures corners stay visually concentric. Example: outer 20px radius with 4px padding → inner 16px radius.
-
-| Value | Usage |
-|-------|-------|
-| 8px | Buttons, inputs, small tags |
-| 12px | Cards, small widgets |
-| 16px | Large widgets |
-| 20px | Rounded containers |
-
-### Buttons
-
-Variants: **Normal** (solid), **Icon+Text**, **Outline**.
-States: Rest, Hover, Pressed, Disabled.
-
-| Size | Height |
-|------|--------|
-| Small | 28-32px |
-| Normal | 36-40px |
-| Medium | 40-48px |
-
-- Horizontal padding: 1.5x font size
-- Vertical padding: 1x font size
-- Icon-to-text gap: > 5px
-- Icon size: 16-20px
-
-### Shadow
-
-```css
-box-shadow: 0px 12px 32px rgba(55, 65, 81, 0.1);
-/* #374151, x:0 y:12, opacity 10%, blur 32 */
-```
-No pure black shadows. Keep soft and coordinated.
-
-### Material Effects
-
-- **Frosted glass:** `backdrop-filter: blur(...)` with semi-transparent background
-- **Liquid glass:** subtle transparency with border highlights
-
-### Icons
-
-- Source: [Google Material Symbols (Rounded)](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded)
-- Default size: 24px, margin: 2px, stroke: 2px
-- Styles: Outlined (default), Filled (alternative)
-- **Style:** use rounded icons with soft corners, not sharp-edged icons
-- **Weight:** icon weight should match accompanying text weight
-- **Recommended sizes:** 16px, 24px, 32px, 48px, 64px
-
-### Layout
-
-| Property | Value |
-|----------|-------|
-| Page width | 1440px |
-| Content max-width | 1200px |
-| Above-the-fold | 900px |
-| Grid | 12 columns + 11 gutters, gutter 24px |
-| Nav height | 60-100px |
-| Footer min-height | 80px |
-| Min tap target | 44px (WCAG) |
-
-## Implementation Checklist
-
-When building a component, verify:
-1. Colors match design tokens (light AND dark mode)
-2. Typography uses correct level (H1-H6)
-3. Spacing follows 4px base system
-4. Border radius follows size rules
-5. Buttons have all 4 states
-6. Color contrast meets WCAG 2.1 AA
-7. Tap targets >= 44px
-
-## Resources
-
-| File | Purpose |
-|------|---------|
-| [references/tokens.css](references/tokens.css) | CSS custom properties — copy or `@import` into project |
-| [references/tokens.ts](references/tokens.ts) | TypeScript token objects — `import { colors, typography }` |
-| [references/tailwind-preset.js](references/tailwind-preset.js) | Tailwind CSS preset — `presets: [require('./tailwind-preset')]` |
-| [references/design-tokens.md](references/design-tokens.md) | Human-readable full token documentation |
-| [references/figma-nodes.md](references/figma-nodes.md) | Figma file key and node IDs for programmatic ground truth access |
+Run `npm run check` in this skill repository after changing canonical tokens or the brand site.

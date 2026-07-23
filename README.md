@@ -1,111 +1,61 @@
 # NYCU LIFE UI Skill
 
-[NYCU LIFE UI Style Guidelines](https://www.figma.com/design/eshYmSn9jeEEti38tO1GGU/NYCU-LIFE-UI-Style-Guidelines?node-id=2635-102&m=dev) as an AI agent skill. Colors, typography, spacing, components — WCAG 2.1 AA.
+The NYCU LIFE brand system packaged as an agent skill, a generated token library, and a bilingual-ready brand website.
 
-## Install
+The system connects the bamboo fox identity with production UI decisions: logo selection, semantic color roles, typography, campus patterns, responsive behavior, dark mode, and WCAG 2.1 AA review.
 
-### All Agents (Recommended)
-
-Install via [`npx skills`](https://skills.sh) — installs to `~/.agents/skills/` and creates symlinks for all detected agents:
+## Use the Skill
 
 ```bash
 npx skills add nycu-life/nycu-life-ui-skill
 ```
 
-### Per-Agent Manual Install
+Example prompt:
 
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-Skills directory: `~/.claude/skills/` (global) or `.claude/skills/` (project)
-
-```bash
-git clone https://github.com/nycu-life/nycu-life-ui-skill.git ~/.agents/skills/nycu-life-ui
-ln -s ~/.agents/skills/nycu-life-ui ~/.claude/skills/nycu-life-ui
+```text
+Use $nycu-life-ui to brand and review this event page for mobile, dark mode, and accessibility.
 ```
 
-Claude Code reads `SKILL.md` frontmatter (`name` + `description`) to decide when to trigger the skill. The body is loaded on demand. No additional config needed.
-</details>
+## Open the Brand Website
 
-<details>
-<summary><strong>Codex (OpenAI)</strong></summary>
+Open `index.html` directly, or serve the repository with any static server. The homepage covers the brand story, official logo downloads, foundations, component examples, and Skill installation. The complete nine-chapter specification lives at `guidelines/index.html`.
 
-Skills directory: `~/.codex/skills/` (global) or `.agents/skills/` (project)
+## Work with Tokens
 
-```bash
-git clone https://github.com/nycu-life/nycu-life-ui-skill.git ~/.codex/skills/nycu-life-ui
-```
+`references/tokens.json` is the only editable token source. Generated artifacts are:
 
-Codex reads `SKILL.md` for skill content and optionally `agents/openai.yaml` for UI metadata (display name, default prompt). Both are included in this repo.
-</details>
+- `references/tokens.css`
+- `references/tokens.ts`
+- `references/tailwind-preset.js`
 
-<details>
-<summary><strong>Cursor</strong></summary>
-
-Skills directory: `~/.cursor/skills/` (global) or `.agents/skills/` (project)
+After changing the canonical file, run:
 
 ```bash
-# Global
-git clone https://github.com/nycu-life/nycu-life-ui-skill.git ~/.agents/skills/nycu-life-ui
-ln -s ~/.agents/skills/nycu-life-ui ~/.cursor/skills/nycu-life-ui
-
-# Project-level
-git clone https://github.com/nycu-life/nycu-life-ui-skill.git .agents/skills/nycu-life-ui
+npm run check
 ```
 
-Cursor reads `SKILL.md` from `.agents/skills/` (project) or `~/.cursor/skills/` (global). This is separate from Cursor's native `.cursor/rules/*.mdc` system.
-</details>
+This regenerates all formats, verifies normal-text contrast pairs, and builds the static site into `dist/`.
 
-<details>
-<summary><strong>Gemini CLI</strong></summary>
+## Repository Map
 
-Skills directory: `~/.gemini/skills/` + `~/.agents/skills/` (global) or `.gemini/skills/` + `.agents/skills/` (project)
+| Path | Purpose |
+|---|---|
+| `SKILL.md` | Task-oriented workflow for agents |
+| `agents/openai.yaml` | Skill UI metadata and official brand assets |
+| `assets/brand/` | Official web-ready SVG logo set and manifest |
+| `references/` | Brand, logo, UI, accessibility, presentation, and Figma guidance |
+| `scripts/` | Token generation, validation, and static site build |
+| `site/` | Brand website styles and behavior |
+| `guidelines/` | Complete nine-chapter visual UI guidelines |
+| `index.html` | Brand website entry point |
 
-```bash
-git clone https://github.com/nycu-life/nycu-life-ui-skill.git ~/.agents/skills/nycu-life-ui
-```
+## Brand Sources
 
-Gemini CLI natively reads from both `~/.agents/skills/` and `~/.gemini/skills/` with workspace skills taking precedence over global.
-</details>
-
-<details>
-<summary><strong>Other Agents</strong></summary>
-
-Any agent that reads `SKILL.md` files can use this skill:
-
-```bash
-git clone https://github.com/nycu-life/nycu-life-ui-skill.git <agent-skills-dir>/nycu-life-ui
-```
-</details>
-
-## What's Included
-
-| File | Description |
-|------|-------------|
-| `SKILL.md` | Core skill — quick reference for colors, typography, spacing, buttons, layout |
-| `references/tokens.css` | CSS custom properties (light + dark mode), ready to `@import` |
-| `references/tokens.ts` | TypeScript token objects, ready to `import` |
-| `references/tailwind-preset.js` | Tailwind CSS preset, ready for `presets: [...]` |
-| `references/design-tokens.md` | Full human-readable token documentation |
-| `references/figma-nodes.md` | Figma node IDs for programmatic access |
-| `agents/openai.yaml` | Codex UI metadata (display name, default prompt) |
-| `index.html` | Visual spec page — open in browser to preview all design tokens |
-
-## Design System Overview
-
-- **Colors:** Brand blue + green/orange accents, 9-step neutral scale, 4 state colors (light & dark)
-- **Typography:** 6-level type scale (H1 36px Bold → H6 12px Regular), system fonts
-- **Spacing:** 4px base grid (xs/sm/md/lg/xl)
-- **Border Radius:** 4-step scale (8/12/16/20px)
-- **Buttons:** 3 variants x 4 states x 3 sizes
-- **Icons:** Google Material Symbols (Rounded), 24px default
-- **Layout:** 1200px content, 12-col grid, 24px gutter
-- **Accessibility:** WCAG 2.1 AA, verified contrast pairings, 44px min tap target
-
-## Source of Truth
-
-All tokens derive from the official Figma file. When in doubt, reference the Figma directly via the node IDs in `references/figma-nodes.md`.
+- [NYCU LIFE UI Style Guidelines on Figma](https://www.figma.com/design/eshYmSn9jeEEti38tO1GGU/NYCU-LIFE-UI-Style-Guidelines?node-id=2635-102&m=dev)
+- [NYCU LIFE Canva presentation link](https://canva.link/0waapqiiuxdixt7) — sign-in may be required
+- Official NYCU LIFE logo SVG package supplied by the project owner
+- January 2026 brand vision proposal supplied by the project owner
 
 ## License
 
-MIT
+Code and Skill instructions are MIT licensed. Brand asset usage remains subject to NYCU LIFE brand ownership and approval.

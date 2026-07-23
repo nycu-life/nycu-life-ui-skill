@@ -1,0 +1,11 @@
+{
+  "name": "nycu-life-ui-skill",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "generate": "node scripts/generate-tokens.mjs",
+    "validate": "node scripts/validate.mjs",
+    "build": "npm run generate && npm run validate && node scripts/build-site.mjs",
+    "check": "npm run build"
+  }
+}

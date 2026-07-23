@@ -1,0 +1,19 @@
+{
+  "version": "1.1.0",
+  "officialLogoBlue": "#0922E7",
+  "source": "NYCU LIFE LOGO asset package supplied by project owner",
+  "assets": [
+    { "file": "mark-blue.svg", "variant": "symbol", "color": "blue", "mode": "light", "minimumCssWidth": 32 },
+    { "file": "mark-white.svg", "variant": "symbol", "color": "white", "mode": "dark", "minimumCssWidth": 32 },
+    { "file": "lockup-horizontal-blue.svg", "variant": "primary-horizontal", "color": "blue", "mode": "light", "minimumCssWidth": 140 },
+    { "file": "lockup-horizontal-white.svg", "variant": "primary-horizontal", "color": "white", "mode": "dark", "minimumCssWidth": 140 },
+    { "file": "lockup-integrated-blue.svg", "variant": "integrated-lettermark", "color": "blue", "mode": "light", "minimumCssWidth": 160 },
+    { "file": "lockup-integrated-white.svg", "variant": "integrated-lettermark", "color": "white", "mode": "dark", "minimumCssWidth": 160 },
+    { "file": "lockup-url-blue.svg", "variant": "url-horizontal", "color": "blue", "mode": "light", "minimumCssWidth": 140 },
+    { "file": "lockup-url-white.svg", "variant": "url-horizontal", "color": "white", "mode": "dark", "minimumCssWidth": 140 },
+    { "file": "lockup-vertical-blue.svg", "variant": "stacked", "color": "blue", "mode": "light", "minimumCssWidth": 80 },
+    { "file": "lockup-vertical-white.svg", "variant": "stacked", "color": "white", "mode": "dark", "minimumCssWidth": 80 },
+    { "file": "lockup-badge-blue.svg", "variant": "badge", "color": "blue", "mode": "light", "minimumCssWidth": 64 },
+    { "file": "lockup-badge-white.svg", "variant": "badge", "color": "white", "mode": "dark", "minimumCssWidth": 64 }
+  ]
+}
