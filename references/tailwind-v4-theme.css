@@ -1,0 +1,18 @@
+/** Generated from references/tokens.json. Do not edit by hand. */
+
+@theme inline {
+  --font-nycu-sans: var(--font-sans);
+
+  --color-nycu-canvas: var(--color-canvas);
+  --color-nycu-surface: var(--color-surface);
+  --color-nycu-text-primary: var(--color-text-primary);
+  --color-nycu-text-secondary: var(--color-text-secondary);
+  --color-nycu-action-primary: var(--color-action-primary);
+  --color-nycu-action-primary-hover: var(--color-action-primary-hover);
+  --color-nycu-focus-ring: var(--color-focus-ring);
+
+  --radius-nycu-sm: var(--radius-sm);
+  --radius-nycu-md: var(--radius-md);
+
+  --ease-nycu-standard: var(--motion-ease);
+}
