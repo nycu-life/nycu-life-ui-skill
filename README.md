@@ -2,7 +2,7 @@
 
 The NYCU LIFE brand system packaged as an agent skill, a generated token library, and a bilingual-ready brand website.
 
-The system connects the bamboo fox identity with production UI decisions: logo selection, semantic color roles, typography, campus patterns, responsive behavior, dark mode, and WCAG 2.1 AA review.
+The system connects the bamboo fox identity with production UI decisions: logo selection, semantic color roles, typography, campus patterns, responsive behavior, dark mode, and WCAG 2.2 AA review.
 
 ## Use the Skill
 
