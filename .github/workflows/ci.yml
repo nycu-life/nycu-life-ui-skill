@@ -10,9 +10,12 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    # Keep external fork PRs on GitHub-hosted runners; shared runners execute trusted code.
+    runs-on: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && 'ubuntu-latest' || 'nycu-life-linux' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22.23.4
